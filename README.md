@@ -33,3 +33,46 @@ It’s designed to showcase my **Backend** and **DevOps** skills with a clean UI
 
 ## 📁 Folder Structure
 
+shivam-portfolio/
+├── components/ # Navbar, Footer, UI parts
+├── pages/ # Home, About, Projects, Contact
+├── public/ # Static assets (images, favicon, etc.)
+├── styles/ # Global styles
+├── README.md
+├── .gitignore
+├── package.json
+└── tailwind.config.js
+
+
+---
+
+## ✅ Features
+
+- Light/Dark theme toggle ☀️🌙
+- Animated navbar + transitions with Framer Motion
+- Experience timeline, tech stack badges, and project links
+- Responsive layout (mobile-first)
+- 404 custom page
+- Clean code structure with Tailwind + Next.js
+
+---
+
+## 📦 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/shane-Coder/shivam-portfolio.git
+
+# Install dependencies
+npm install
+
+# Run locally
+npm run dev
+
+# Build for production
+npm run build
+
+
+🌍 Deployment
+Deployed via Vercel — auto-push from main branch.
+
