@@ -3,7 +3,7 @@
 Welcome to my personal developer portfolio built using **Next.js**, **TypeScript**, and **Tailwind CSS**.  
 It’s designed to showcase my **Backend** and **DevOps** skills with a clean UI, animations, and theme toggling.
 
-> 🌐 **Live Site**: [https://shivam.vercel.app](https://shivam.vercel.app)  
+> 🌐 **Live Site**: [https://shivam.vercel.app](https://shivam-portfolio-gold-omega.vercel.app/)  
 > ✨ Responsive • Dark/Light Mode • Vercel-Ready • Mobile Friendly
 
 ---
@@ -33,15 +33,17 @@ It’s designed to showcase my **Backend** and **DevOps** skills with a clean UI
 
 ## 📁 Folder Structure
 
+<details> <summary>📁 Click to expand Folder Structure</summary>
 shivam-portfolio/
-├── components/ # Navbar, Footer, UI parts
-├── pages/ # Home, About, Projects, Contact
-├── public/ # Static assets (images, favicon, etc.)
-├── styles/ # Global styles
+├── components/         # Navbar, Footer, UI parts
+├── pages/              # Home, About, Projects, Contact
+├── public/             # Static assets (images, favicon, etc.)
+├── styles/             # Global styles
 ├── README.md
 ├── .gitignore
 ├── package.json
 └── tailwind.config.js
+</details>
 
 
 ---
