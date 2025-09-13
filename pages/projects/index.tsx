@@ -3,22 +3,32 @@ import Link from 'next/link';
 export default function Projects() {
   const projects = [
     {
+      title: "Capstone Todo API",
+      description: "A production-ready REST API for task management, built with Go and PostgreSQL, containerized using Docker, and deployed on Render. Implements secure CRUD operations and demonstrates best practices in backend design.",
+      tech: ["Go", "Docker", "PostgreSQL", "Render", "DSA", "REST API", "Cloud Deployment"],
+      github: "https://github.com/shane-Coder/capstone-todo-api",
+      live: "https://go-todo-api-i7ih.onrender.com/"
+    },
+    {
       title: 'RideShare',
-      tech: ['Node.js', 'ExpressJS', 'Solidity', 'Blockchain'],
       description: 'Blockchain-based carpool platform saving 31% in ride charges. Built with encrypted peer-to-peer smart contracts.',
-      link: 'https://github.com/shane-Coder/RideShare'
+      tech: ['Node.js', 'ExpressJS', 'Solidity', 'Blockchain'],
+      github: 'https://github.com/shane-Coder/RideShare',
+      live: 'https://github.com/shane-Coder/RideShare' // No live link available
     },
     {
       title: 'Shopping',
-      tech: ['Python', 'Django', 'SQLite'],
       description: 'Scalable e-commerce site with secure user auth, matrix image processing, and seamless cart-to-checkout flow.',
-      link: 'https://github.com/shane-Coder/shopping'
+      tech: ['Python', 'Django', 'SQLite'],
+      github: 'https://github.com/shane-Coder/shopping',
+      live: 'https://github.com/shane-Coder/shopping' // No live link available
     },
     {
       title: 'ImageUploader',
-      tech: ['Python', 'Django', 'Pillow'],
       description: 'Secure image upload system with encryption, metadata tagging, and optimized backend performance.',
-      link: 'https://github.com/shane-Coder/Image-Uploader'
+      tech: ['Python', 'Django', 'Pillow'],
+      github: 'https://github.com/shane-Coder/Image-Uploader',
+      live: 'https://github.com/shane-Coder/Image-Uploader' // No live link available
     }
   ];
 
@@ -37,13 +47,11 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            <Link href={project.link} legacyBehavior>
-              <a
-                target="_blank"
-                className="text-green-500 hover:text-black dark:hover:text-white transition duration-300"
-              >
-                View on GitHub →
-              </a>
+            <Link href={project.github} legacyBehavior>
+              <a target="_blank" className="text-blue-400 hover:text-white">🐙 GitHub</a>
+            </Link>
+            <Link href={project.live} legacyBehavior>
+              <a target="_blank" className="ml-4 text-green-400 hover:text-white">🔗 Live Demo</a>
             </Link>
           </div>
         ))}

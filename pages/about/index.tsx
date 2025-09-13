@@ -29,7 +29,7 @@ export default function About() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800 dark:text-gray-300">
             <ul className="list-disc list-inside space-y-2">
             <li>
-                <span className="font-semibold underline">Languages:</span> Python, Golang, C++, Java
+                <span className="font-semibold underline">Languages:</span> Python, Go, C++, Java
             </li>
             <li>
                 <span className="font-semibold underline">Web:</span> Django, FastAPI, REST API, Flask

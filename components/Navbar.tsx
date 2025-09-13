@@ -26,16 +26,19 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-black border-b border-gray-800 px-6 py-4 fixed w-full z-10 top-0"
+      className="bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 px-6 py-4 fixed w-full z-10 top-0"
     >
       <div className="max-w-4xl mx-auto flex justify-between items-center">
-        <div className="hidden md:flex space-x-4 text-gray-300">
+        {/* Desktop Nav */}
+        <div className="hidden md:flex space-x-4">
           {navItems.map(({ label, href }) => (
             <Link href={href} legacyBehavior key={label}>
               <a
                 className={`${
-                  router.pathname === href ? 'underline font-semibold text-white' : 'text-blue-400'
-                } transition duration-300 hover:text-white`}
+                  router.pathname === href
+                    ? 'underline font-semibold text-black dark:text-white'
+                    : 'text-gray-800 dark:text-blue-400'
+                } transition duration-300 hover:text-black dark:hover:text-white`}
               >
                 {label}
               </a>
@@ -43,10 +46,11 @@ export default function Navbar() {
           ))}
         </div>
 
+        {/* Theme Toggle (Desktop) */}
         {mounted && (
           <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="text-white border px-2 py-1 rounded hover:bg-gray-700 ml-4 hidden md:inline"
+            className="text-black dark:text-white border px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 ml-4 hidden md:inline"
           >
             {theme === 'dark' ? '🌞 Light' : '🌙 Dark'}
           </button>
@@ -54,7 +58,10 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)} className="text-white">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-black dark:text-white"
+          >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -62,22 +69,26 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden mt-4 space-y-2 text-center text-gray-300">
+        <div className="md:hidden mt-4 space-y-2 text-center">
           {navItems.map(({ label, href }) => (
             <Link href={href} legacyBehavior key={label}>
               <a
                 className={`block ${
-                  router.pathname === href ? 'underline font-semibold text-white' : 'text-blue-400'
-                } transition duration-300 hover:text-white`}
+                  router.pathname === href
+                    ? 'underline font-semibold text-black dark:text-white'
+                    : 'text-gray-800 dark:text-blue-400'
+                } transition duration-300 hover:text-black dark:hover:text-white`}
               >
                 {label}
               </a>
             </Link>
           ))}
+
+          {/* Theme Toggle (Mobile) */}
           {mounted && (
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="text-white border px-2 py-1 rounded hover:bg-gray-700"
+              className="mt-2 text-black dark:text-white border px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
             >
               {theme === 'dark' ? '🌞 Light' : '🌙 Dark'}
             </button>
