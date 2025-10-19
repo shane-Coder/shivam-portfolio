@@ -10,6 +10,13 @@ export default function Projects() {
       live: "https://go-todo-api-i7ih.onrender.com/"
     },
     {
+      title: "Learning Go",
+      description: "Personal repository documenting my journey learning Golang through practical examples.",
+      tech: ["Go", "CLI", "Data Structures"],
+      github: "https://github.com/shane-Coder/learning-go",
+      live: "https://github.com/shane-Coder/learning-go" // No live link available
+    },
+    {
       title: 'RideShare',
       description: 'Blockchain-based carpool platform saving 31% in ride charges. Built with encrypted peer-to-peer smart contracts.',
       tech: ['Node.js', 'ExpressJS', 'Solidity', 'Blockchain'],

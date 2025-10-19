@@ -9,6 +9,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <Navbar />
       <div className="pt-20">
         <Component {...pageProps} />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#000000" />
       </div>
     </ThemeProvider>
   )

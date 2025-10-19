@@ -26,7 +26,7 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 px-6 py-4 fixed w-full z-10 top-0"
+      className="bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 shadow-sm px-6 py-4 fixed w-full z-10 top-0"
     >
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         {/* Desktop Nav */}
@@ -38,7 +38,7 @@ export default function Navbar() {
                   router.pathname === href
                     ? 'underline font-semibold text-black dark:text-white'
                     : 'text-gray-800 dark:text-blue-400'
-                } transition duration-300 hover:text-black dark:hover:text-white`}
+                } transition duration-300 hover:text-black-600 dark:hover:text-white`}
               >
                 {label}
               </a>
