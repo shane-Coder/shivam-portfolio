@@ -35,6 +35,11 @@ export default function Contact() {
             <FaPhone /> +91-8303669396
           </a>
         </div>
+
+        <p className="mt-6 text-gray-600 dark:text-gray-400 text-center">
+          Currently open for backend & DevOps roles — remote or on-site. Let’s build something great together 🚀
+        </p>
+
       </div>
     </main>
   );

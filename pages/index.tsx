@@ -108,7 +108,7 @@ export default function Home() {
             {/* Resume Button */}
             <Link href="/ShivamOmer.pdf" legacyBehavior>
               <a
-                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-medium transition shadow-md"
+                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-medium transition shadow-lg hover:shadow-xl"
                 target="_blank"
                 rel="noopener noreferrer"
               >
