@@ -6,6 +6,7 @@ export default function Experience() {
   const experiences = [
     {
       company: "Tussle Digital",
+      logo: "/tussle-logo.png",
       role: "Python Backend Developer",
       duration: "Sept 2025 – Present",
       highlights: [
@@ -19,6 +20,7 @@ export default function Experience() {
     },
     {
       company: "RakshaIT (Subsidiary of Tussle Digital)",
+      logo: "/rakshait-logo.png",
       role: "Python Backend Developer",
       duration: "Sept 2025 – Present",
       highlights: [
