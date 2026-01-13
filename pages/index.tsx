@@ -76,13 +76,11 @@ export default function Home() {
               }}
               className="text-xl text-gray-700 dark:text-gray-400 leading-relaxed"
             >
-              Python & Go Backend Developer • DevOps Engineer • Cloud Infrastructure Specialist
+              Software Engineer @ Move37 AI | Backend & DevOps Engineer
             </motion.p>
 
             <p className="text-md text-gray-700 dark:text-gray-400 max-w-lg">
-              With 2 years of experience in backend and cloud engineering, I build
-              high-performance APIs, automate CI/CD pipelines, and optimize deployments
-              that scale across AWS and Kubernetes.
+              With 2 years of experience in backend and cloud engineering, I work on scalable APIs, automation pipelines, and production systems across Python, Go, and cloud-native infrastructure.
             </p>
 
             {/* Tech Stack Badges */}

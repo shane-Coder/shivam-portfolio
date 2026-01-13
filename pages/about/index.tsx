@@ -22,50 +22,27 @@ export default function About() {
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
 
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Hi, I’m <strong>Shivam Omer</strong> — a{" "}
-            <span className="font-semibold">Python Backend Developer</span> and{" "}
-            <span className="font-semibold">DevOps Engineer</span> with over 1.5
-            years of experience building scalable systems, optimizing APIs, and
-            managing automation pipelines. I’m passionate about clean code,
-            cloud-native design, and solving real-world business challenges.
+            I’m <strong>Shivam Omer</strong>, a <span className="font-semibold">Software Engineer</span> currently working at <strong>Move37 AI</strong>, where I help build AI-driven data and intelligent document processing systems.
+          </p>
+
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            I have strong experience in backend engineering and DevOps, with hands-on work in Python, Go, Django, FastAPI, Docker, Kubernetes, and cloud infrastructure. Previously at Solytics Partners, I worked across backend development and DevOps, contributing to high-impact internal platforms and production systems.
+          </p>
+
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            I enjoy working close to the problem space, owning systems end-to-end, and building software that is reliable, scalable, and easy to maintain.
           </p>
 
           {/* --- CURRENT ROLE --- */}
           <section>
             <h2 className="text-2xl font-semibold mb-3">Current Role</h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              I currently work at{" "}
-              <strong>Tussle Digital</strong> and its subsidiary{" "}
-              <strong>RakshaIT</strong> as a{" "}
-              <span className="font-semibold">Python Backend Developer</span>.
-              My role involves backend development, system maintenance, and
-              client support for <strong>APS (Australia Payroll Services)</strong>.
+              I currently work at <strong>Move37 AI Technologies Pvt. Ltd.</strong> as a <span className="font-semibold">Software Engineer</span>.
             </p>
-
             <ul className="list-disc list-inside mt-3 space-y-2 text-gray-700 dark:text-gray-400">
-              <li>
-                Troubleshoot, analyze, and resolve client issues raised by APS
-                using <strong>PostgreSQL</strong>, <strong>SQL queries</strong>,
-                and Python scripts.
-              </li>
-              <li>
-                Work with <strong>virtual machines</strong> and{" "}
-                <strong>Remote Desktop Protocol (RDP)</strong> for environment
-                management across Windows and Linux servers.
-              </li>
-              <li>
-                Develop and maintain REST APIs using{" "}
-                <strong>Django</strong> and <strong>FastAPI</strong> for
-                RakshaIT projects.
-              </li>
-              <li>
-                Perform <strong>CRUD operations</strong>, data modeling, and API
-                testing with <strong>Postman</strong>.
-              </li>
-              <li>
-                Collaborate across teams to deploy and monitor services on{" "}
-                <strong>macOS, Linux, and Windows</strong> environments.
-              </li>
+              <li>Working on AI-driven backend systems and data processing pipelines.</li>
+              <li>Designing and building scalable backend services with a focus on clean architecture and performance.</li>
+              <li>Collaborating closely with founders and senior engineers on system design and technical execution.</li>
             </ul>
           </section>
 
@@ -73,9 +50,17 @@ export default function About() {
           <section>
             <h2 className="text-2xl font-semibold mb-3">Previous Experience</h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Previously, I worked at <strong>Solytics Partners</strong> from
-              March 2024 to August 2025. I initially joined as a Backend Developer
-              and later transitioned into a DevOps-focused role.
+              Previously, I worked at <strong>Tussle Digital</strong> and its subsidiary <strong>RakshaIT</strong> as a <span className="font-semibold">Python Backend Developer</span>, supporting enterprise clients including <strong>APS (Australia Payroll Services)</strong>.
+            </p>
+            <ul className="list-disc list-inside mt-3 space-y-2 text-gray-700 dark:text-gray-400">
+              <li>Resolved production issues and client queries using PostgreSQL, SQL queries, and Python scripts.</li>
+              <li>Worked on virtual machines and Remote Desktop Protocol (RDP) for Windows and Linux server environments.</li>
+              <li>Developed and maintained REST APIs using Django and FastAPI.</li>
+              <li>Handled CRUD operations, data validation, and API testing with Postman.</li>
+              <li>Collaborated with cross-functional teams across macOS, Linux, and Windows systems.</li>
+            </ul>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              I worked at <strong>Solytics Partners</strong> I initially joined as a Backend Developer (Mar 2024 – Feb 2025) and later transitioned into a DevOps Engineer role (Mar 2025 – May 2025).
             </p>
 
             <ul className="list-disc list-inside mt-3 space-y-2 text-gray-700 dark:text-gray-400">

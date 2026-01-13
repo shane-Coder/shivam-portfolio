@@ -5,10 +5,23 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
+      company: "Move37 AI Technologies Pvt. Ltd.",
+      logo: "/move37-logo.png",
+      role: "Software Engineer",
+      duration: "Jan 2026 – Present",
+      highlights: [
+        "Working on AI-driven data and intelligent document processing systems.",
+        "Designing and building backend services with a focus on scalability, reliability, and clean architecture.",
+        "Collaborating closely with founders and senior leadership on technical roadmap and execution.",
+        "Contributing across backend development, system design, and deployment workflows.",
+      ],
+      tech: ["Python", "Django", "FastAPI", "DRF", "Backend Architecture", "AI Systems", "Cloud", "APIs"],
+    },
+    {
       company: "Tussle Digital",
       logo: "/tussle-logo.png",
       role: "Python Backend Developer",
-      duration: "Sept 2025 – Present",
+      duration: "Sept 2025 – Nov 2025",
       highlights: [
         "Developing and maintaining backend APIs using Python (FastAPI & Django).",
         "Handling client project for APS (Australia Payroll Services) — managing technical queries, backend issues, and optimizing performance.",
@@ -22,7 +35,7 @@ export default function Experience() {
       company: "RakshaIT (Subsidiary of Tussle Digital)",
       logo: "/rakshait-logo.png",
       role: "Python Backend Developer",
-      duration: "Sept 2025 – Present",
+      duration: "Sept 2025 – Nov 2025",
       highlights: [
         "Building RESTful APIs using Django and FastAPI frameworks with secure authentication.",
         "Implementing CRUD operations, schema optimization, and data validation in PostgreSQL.",
@@ -50,7 +63,7 @@ export default function Experience() {
         },
         {
           title: "DevOps Engineer",
-          duration: "Mar 2025 – Aug 2025",
+          duration: "Mar 2025 – May 2025",
           highlights: [
             "Transitioned internally to explore end-to-end DevOps lifecycle and infrastructure automation.",
             "Led containerized deployments with Docker, Kubernetes, Helm, and Terraform.",
@@ -58,16 +71,7 @@ export default function Experience() {
             "Deployed and managed multi-cloud infrastructure (AWS, Azure, and on-premises).",
             "Automated environment provisioning using Ansible and Terraform, improving deployment speed by 60%.",
           ],
-          tech: [
-            "Docker",
-            "Kubernetes",
-            "Helm",
-            "Terraform",
-            "Ansible",
-            "AWS",
-            "Azure",
-            "CI/CD",
-          ],
+          tech: ["Docker", "Kubernetes", "Helm", "Terraform", "Ansible", "AWS", "Azure", "CI/CD"],
         },
       ],
     },
