@@ -4,6 +4,21 @@ import { motion } from "framer-motion";
 export default function Projects() {
   const projects = [
     {
+      title: "Azure Databricks Log Analytics Pipeline",
+      description: 
+        "Built a cloud-based data engineering pipeline using Azure Data Lake, Databricks, and Delta Lake to process and analyze application logs. The system ingests raw log data, performs transformations using PySpark, and stores it in Delta format to enable ACID transactions and versioned data analysis. Implemented SQL-based update and delete operations along with time travel to access historical data states.",
+      tech: ["Azure Data Lake (ADLS Gen2)", "Azure Databricks", "Delta Lake", "PySpark", "SQL"],
+      github: "https://github.com/shane-Coder/azure-databricks-delta-lake-pipeline",
+      live: "https://github.com/shane-Coder/azure-databricks-delta-lake-pipeline",
+      highlights: [
+        "Simulates real-world log analytics system used in production environments",
+        "Designed end-to-end data pipeline on Azure",
+        "Processed log data using distributed computing (Spark)",
+        "Implemented ACID operations using Delta Lake",
+        "Demonstrated time travel for historical data querying",
+      ],
+    },
+    {
       title: "Go File Organizer CLI",
       description:
         "A fast and efficient CLI tool built in Go to automatically organize files into folders based on file extensions. Handles directories safely, runs cross-platform, and simplifies file management.",
