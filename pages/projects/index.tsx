@@ -1,160 +1,160 @@
-import Link from "next/link";
-import { motion } from "framer-motion";
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Projects() {
   const projects = [
     {
-      title: "Azure Databricks Log Analytics Pipeline",
-      description: 
-        "Built a cloud-based data engineering pipeline using Azure Data Lake, Databricks, and Delta Lake to process and analyze application logs. The system ingests raw log data, performs transformations using PySpark, and stores it in Delta format to enable ACID transactions and versioned data analysis. Implemented SQL-based update and delete operations along with time travel to access historical data states.",
-      tech: ["Azure Data Lake (ADLS Gen2)", "Azure Databricks", "Delta Lake", "PySpark", "SQL"],
-      github: "https://github.com/shane-Coder/azure-databricks-delta-lake-pipeline",
-      live: "https://github.com/shane-Coder/azure-databricks-delta-lake-pipeline",
+      title: 'Azure Databricks Delta Lake Pipeline',
+      description:
+        'Built a cloud-native data pipeline on Azure using Databricks, Delta Lake, and PySpark to ingest and transform large-scale log data with transactional and historical querying support.',
+      tech: ['Azure', 'Databricks', 'Delta Lake', 'PySpark', 'SQL'],
+      github: 'https://github.com/shane-Coder/azure-databricks-delta-lake-pipeline',
+      live: 'https://github.com/shane-Coder/azure-databricks-delta-lake-pipeline',
       highlights: [
-        "Simulates real-world log analytics system used in production environments",
-        "Designed end-to-end data pipeline on Azure",
-        "Processed log data using distributed computing (Spark)",
-        "Implemented ACID operations using Delta Lake",
-        "Demonstrated time travel for historical data querying",
+        'Implemented micro-batch processing for analytical workloads',
+        'Designed a production-style log analytics workflow',
+        'Used Delta Lake for versioned and reliable data processing',
       ],
     },
     {
-      title: "Go File Organizer CLI",
+      title: 'Log Management Microservice',
       description:
-        "A fast and efficient CLI tool built in Go to automatically organize files into folders based on file extensions. Handles directories safely, runs cross-platform, and simplifies file management.",
-      tech: ["Go", "CLI", "File System", "Cross-Platform", "Automation"],
-      github: "https://github.com/shane-Coder/file-organizer-cli",
-      live: "https://github.com/shane-Coder/file-organizer-cli", 
-      preview: "https://rawcdn.githack.com/shane-Coder/file-organizer-cli/main/visualSimulator.html",
+        'Designed a distributed log ingestion platform capable of processing thousands of asynchronous events with Kafka-driven streaming, real-time alerting, and analytics-ready storage.',
+      tech: ['Django', 'Kafka', 'MongoDB', 'Docker', 'Microservices'],
+      github: 'https://github.com/shane-Coder/log-management-microservice',
+      live: 'https://github.com/shane-Coder/log-management-microservice',
       highlights: [
-        "Organizes files automatically by extension.",
-        "Cross-platform support (Windows, macOS, Linux).",
-        "Built with Go’s standard library — no dependencies.",
-        "Future-ready: dry-run mode and test automation planned.",
+        'Built asynchronous pipelines for high-throughput ingestion',
+        'Enabled decoupled producer-consumer architecture',
+        'Created a scalable foundation for operational monitoring',
       ],
     },
     {
-      title: "Capstone Todo API",
+      title: 'Event-Driven Notification System',
       description:
-        "A production-ready REST API for task management, built with Go and PostgreSQL, containerized using Docker, and deployed on Render. Implements secure CRUD operations and clean architecture.",
-      tech: [
-        "Go",
-        "Docker",
-        "PostgreSQL",
-        "Render",
-        "DSA",
-        "REST API",
-        "Cloud Deployment",
+        'Built an async notification engine supporting email and SMS workflows through decoupled microservices and resilient message queue orchestration.',
+      tech: ['Django', 'Kafka', 'MongoDB', 'Docker', 'Async Processing'],
+      github: 'https://github.com/shane-Coder/event-driven-notification-system',
+      live: 'https://github.com/shane-Coder/event-driven-notification-system',
+      highlights: [
+        'Designed resilient message processing flows',
+        'Improved reliability through decoupled services',
+        'Focused on scalable workflow orchestration',
       ],
-      github: "https://github.com/shane-Coder/capstone-todo-api",
-      live: "https://go-todo-api-i7ih.onrender.com/",
     },
     {
-      title: "Learning Go",
+      title: 'Go File Organizer CLI',
       description:
-        "Personal repository documenting my journey learning Golang through practical examples and mini-projects.",
-      tech: ["Go", "CLI", "Data Structures"],
-      github: "https://github.com/shane-Coder/learning-go",
-      live: "https://github.com/shane-Coder/learning-go",
+        'A fast and efficient CLI tool built in Go to organize files by extension with safe directory handling and cross-platform support.',
+      tech: ['Go', 'CLI', 'Automation', 'Filesystem'],
+      github: 'https://github.com/shane-Coder/file-organizer-cli',
+      live: 'https://github.com/shane-Coder/file-organizer-cli',
+      highlights: ['Cross-platform file automation', 'Simple and practical developer utility', 'Built with Go standard library'],
     },
     {
-      title: "RideShare",
+      title: 'Capstone Todo API',
       description:
-        "Blockchain-based carpool platform saving 31% in ride charges. Built with encrypted peer-to-peer smart contracts and transparent transactions.",
-      tech: ["Node.js", "ExpressJS", "Solidity", "Blockchain"],
-      github: "https://github.com/shane-Coder/RideShare",
-      live: "https://github.com/shane-Coder/RideShare",
+        'A production-ready REST API for task management built with Go and PostgreSQL, containerized with Docker, and deployed on Render.',
+      tech: ['Go', 'Docker', 'PostgreSQL', 'Render', 'REST API'],
+      github: 'https://github.com/shane-Coder/capstone-todo-api',
+      live: 'https://go-todo-api-i7ih.onrender.com/',
+      highlights: ['Secure CRUD operations', 'Cloud deployment readiness', 'Clean architecture and API structure'],
     },
     {
-      title: "Shopping",
+      title: 'Learning Go',
       description:
-        "Scalable e-commerce site with secure user authentication, matrix image processing, and seamless cart-to-checkout flow.",
-      tech: ["Python", "Django", "SQLite"],
-      github: "https://github.com/shane-Coder/shopping",
-      live: "https://github.com/shane-Coder/shopping",
+        'A personal repository documenting my journey learning Golang through practical examples, mini-projects, and hands-on experimentation.',
+      tech: ['Go', 'Learning', 'Algorithms', 'CLI'],
+      github: 'https://github.com/shane-Coder/learning-go',
+      live: 'https://github.com/shane-Coder/learning-go',
+      highlights: ['Consistent practice through real examples', 'Strong grasp of Go fundamentals', 'Useful for iterative learning'],
     },
     {
-      title: "ImageUploader",
+      title: 'RideShare',
       description:
-        "Secure image upload system with encryption, metadata tagging, and optimized backend performance.",
-      tech: ["Python", "Django", "Pillow"],
-      github: "https://github.com/shane-Coder/Image-Uploader",
-      live: "https://github.com/shane-Coder/Image-Uploader",
+        'A blockchain-based carpool platform designed to reduce ride costs with transparent peer-to-peer transactions and secure smart contracts.',
+      tech: ['Node.js', 'ExpressJS', 'Solidity', 'Blockchain'],
+      github: 'https://github.com/shane-Coder/RideShare',
+      live: 'https://github.com/shane-Coder/RideShare',
+      highlights: ['Built with blockchain concepts', 'Peer-to-peer transport experience', 'Full-stack project experimentation'],
+    },
+    {
+      title: 'Shopping',
+      description:
+        'A scalable e-commerce project with user authentication, cart-to-checkout flow, and a Django-based backend foundation.',
+      tech: ['Python', 'Django', 'SQLite', 'Web App'],
+      github: 'https://github.com/shane-Coder/shopping',
+      live: 'https://github.com/shane-Coder/shopping',
+      highlights: ['Product-oriented backend experience', 'Authentication and business flows', 'Practical full-stack implementation'],
+    },
+    {
+      title: 'ImageUploader',
+      description:
+        'A secure image upload system focused on metadata handling, backend reliability, and smooth media interactions.',
+      tech: ['Python', 'Django', 'Pillow', 'File Handling'],
+      github: 'https://github.com/shane-Coder/Image-Uploader',
+      live: 'https://github.com/shane-Coder/Image-Uploader',
+      highlights: ['File processing and upload workflow', 'Backend-focused media handling', 'Practical application design'],
     },
   ];
 
   return (
-    <main className="bg-white text-black dark:bg-black dark:text-white min-h-screen p-6">
-      <h1 className="text-4xl font-bold mb-10 text-center">🚀 Projects</h1>
+    <main className="min-h-screen bg-white px-6 py-16 text-black dark:bg-black dark:text-white">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">Projects</p>
+          <h1 className="mt-2 text-4xl font-bold sm:text-5xl">Selected Work</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+            A broader look at the work I have built across backend systems, cloud data pipelines, automation, and product-oriented applications.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="border border-gray-300 dark:border-gray-700 rounded-xl p-6 bg-gray-100 dark:bg-gray-900 hover:shadow-lg hover:-translate-y-1 transition-transform duration-300"
-          >
-            <h2 className="text-2xl font-semibold mb-2 text-gradient">
-              {project.title}
-            </h2>
-            <p className="text-gray-700 dark:text-gray-400 mb-3 leading-relaxed">
-              {project.description}
-            </p>
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.article
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              viewport={{ once: true }}
+              className="rounded-3xl border border-gray-200 bg-gray-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-slate-900/60"
+            >
+              <h2 className="text-2xl font-semibold text-gradient">{project.title}</h2>
+              <p className="mt-3 text-gray-700 dark:text-gray-400">{project.description}</p>
 
-            {project.highlights && (
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 mb-3 space-y-1 text-sm">
-                {project.highlights.map((point, i) => (
-                  <li key={i}>{point}</li>
+              {project.highlights && (
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-600 dark:text-gray-400">
+                  {project.highlights.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              )}
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.tech.map((tech, i) => (
+                  <span key={i} className="rounded-full bg-white px-2.5 py-1 text-sm text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-200">
+                    {tech}
+                  </span>
                 ))}
-              </ul>
-            )}
+              </div>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="bg-gray-200 dark:bg-gray-800 text-sm px-2 py-1 rounded-full text-gray-800 dark:text-gray-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-4 text-sm">
-              <Link href={project.github} legacyBehavior>
-                <a
-                  target="_blank"
-                  className="text-blue-500 hover:text-blue-300 font-medium transition"
-                >
-                  🐙 GitHub
-                </a>
-              </Link>
-              {project.live && (
-                <Link href={project.live} legacyBehavior>
-                  <a
-                    target="_blank"
-                    className="text-green-500 hover:text-green-300 font-medium transition"
-                  >
-                    🔗 Live Demo
+              <div className="mt-5 flex flex-wrap gap-4 text-sm">
+                <Link href={project.github} legacyBehavior>
+                  <a target="_blank" className="font-medium text-blue-600 transition hover:text-blue-500">
+                    GitHub
                   </a>
                 </Link>
-              )}
-              {project.preview && (
-                <Link href={project.preview} legacyBehavior>
-                  <a
-                    target="_blank"
-                    className="text-purple-500 hover:text-purple-300 font-medium transition"
-                  >
-                    🎨 UI Preview
-                  </a>
-                </Link>
-              )}
-            </div>
-          </motion.div>
-        ))}
+                {project.live && (
+                  <Link href={project.live} legacyBehavior>
+                    <a target="_blank" className="font-medium text-green-600 transition hover:text-green-500">
+                      Demo
+                    </a>
+                  </Link>
+                )}
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </main>
   );

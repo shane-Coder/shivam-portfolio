@@ -11,38 +11,29 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Shivam Omer | Backend Developer & DevOps Engineer</title>
         <meta
           name="description"
-          content="Portfolio of Shivam Omer – Backend Developer & DevOps Engineer skilled in Python, Go, Django, FastAPI, Docker, and AWS."
+          content="Portfolio of Shivam Omer — Backend Developer and DevOps Engineer skilled in Python, Django, Kafka, Docker, Kubernetes, AWS, and Azure."
         />
         <meta
           name="keywords"
-          content="Shivam Omer, Backend Developer, Python Developer, Golang, Django, FastAPI, DevOps, AWS, Docker, Kubernetes, Terraform, Ansible, CI/CD, PostgreSQL"
+          content="Shivam Omer, Backend Developer, Python Developer, Golang, Django, FastAPI, DevOps, AWS, Azure, Docker, Kubernetes, Terraform, Ansible, CI/CD, Kafka"
         />
         <meta name="author" content="Shivam Omer" />
         <meta name="robots" content="index, follow" />
 
-        {/* 🌍 Open Graph */}
         <meta property="og:title" content="Shivam Omer | Backend Developer & DevOps Engineer" />
-        <meta
-          property="og:description"
-          content="Building scalable APIs, DevOps pipelines, and cloud-native systems using Python, Go, and AWS."
-        />
+        <meta property="og:description" content="Building scalable APIs, event-driven services, and cloud-native infrastructure with Python and modern DevOps practices." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://shivam-portfolio-gold-omega.vercel.app/" />
         <meta property="og:image" content="/profile.jpg" />
 
-        {/* 🐦 Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Shivam Omer | Backend Developer & DevOps Engineer" />
-        <meta
-          name="twitter:description"
-          content="Python & Go Developer | DevOps Engineer | Building scalable APIs and automation pipelines."
-        />
+        <meta name="twitter:description" content="Python, Django, Kafka, Docker, Kubernetes, AWS/Azure — building reliable systems at scale." />
         <meta name="twitter:image" content="/profile.jpg" />
 
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#0f172a" />
 
-        {/* 🧠 JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -59,28 +50,15 @@ export default function App({ Component, pageProps }: AppProps) {
               jobTitle: 'Backend Developer & DevOps Engineer',
               worksFor: {
                 '@type': 'Organization',
-                name: 'Tussle Digital / Raksha IT',
+                name: 'Move37AI',
               },
               alumniOf: {
                 '@type': 'CollegeOrUniversity',
                 name: 'Dr. A.P.J. Abdul Kalam Technical University (AKTU)',
               },
-              knowsAbout: [
-                'Python',
-                'Golang',
-                'Django',
-                'FastAPI',
-                'Docker',
-                'Kubernetes',
-                'AWS',
-                'Terraform',
-                'Ansible',
-                'PostgreSQL',
-                'CI/CD',
-              ],
+              knowsAbout: ['Python', 'Django', 'FastAPI', 'Kafka', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Terraform', 'CI/CD'],
               image: 'https://shivam-portfolio-gold-omega.vercel.app/profile.jpg',
-              description:
-                'Backend Developer & DevOps Engineer building scalable APIs, automation pipelines, and cloud infrastructure with Python, Go, and AWS.',
+              description: 'Backend Developer & DevOps Engineer building scalable APIs, automation pipelines, and cloud infrastructure with Python, Django, Kafka, and AWS/Azure.',
             }),
           }}
         />

@@ -1,37 +1,34 @@
-// pages/index.tsx
-
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const stack = ['Python', 'Django', 'FastAPI', 'Kafka', 'Docker', 'Kubernetes', 'AWS', 'Azure'];
+const highlights = ['2+ years building backend systems', 'Event-driven microservices', 'Cloud-native automation'];
+
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
   return (
-    <main className="relative flex flex-col items-center justify-center min-h-screen pt-28 sm:pt-32 md:pt-36 bg-gradient-to-br from-white to-gray-100 dark:from-black dark:to-gray-900 text-black dark:text-white transition-colors duration-300 px-4 overflow-hidden">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-white via-slate-50 to-blue-50 px-4 py-24 text-black transition-colors duration-300 dark:from-black dark:via-slate-950 dark:to-slate-900 dark:text-white sm:px-6 lg:px-8">
       <Head>
         <title>Shivam Omer | Backend Developer & DevOps Engineer</title>
         <meta
           name="description"
-          content="Shivam Omer – Python & Go Backend Developer with DevOps expertise in Docker, Kubernetes, AWS, and CI/CD automation."
+          content="Shivam Omer builds scalable backend services, event-driven systems, and cloud-native infrastructure with Python, Django, Kafka, Docker, and Kubernetes."
         />
         <meta property="og:title" content="Shivam Omer Portfolio" />
-        <meta
-          property="og:description"
-          content="Backend Developer & DevOps Engineer specializing in cloud automation and scalable APIs."
-        />
+        <meta property="og:description" content="Backend Developer & DevOps Engineer specializing in scalable APIs, distributed systems, and automation." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/preview.png" />
+        <meta property="og:image" content="/profile.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#0f172a" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Background Dots */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.05)_1px,transparent_0)] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.05)_1px,transparent_0)] [background-size:20px_20px] z-0" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.15)_1px,transparent_0)] [background-size:20px_20px] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)]" />
 
       {mounted && (
         <motion.div
@@ -39,101 +36,52 @@ export default function Home() {
           animate="visible"
           variants={{
             hidden: { opacity: 0, y: 20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { staggerChildren: 0.15 },
-            },
+            visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.14 } },
           }}
-          className="flex flex-col md:flex-row items-center justify-center gap-10 text-center md:text-left z-10"
+          className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-10 text-center md:flex-row md:text-left"
         >
-          {/* Profile Photo */}
-          <Image
-            src="/profile.jpg"
-            alt="Shivam Omer"
-            width={160}
-            height={160}
-            className="rounded-full border-4 border-white dark:border-gray-800 shadow-lg"
-          />
+          <motion.div variants={{ hidden: { opacity: 0, scale: 0.96 }, visible: { opacity: 1, scale: 1 } }} className="shrink-0">
+            <Image src="/profile.jpg" alt="Shivam Omer" width={180} height={180} className="rounded-full border-4 border-white shadow-2xl dark:border-slate-900" />
+          </motion.div>
 
-          {/* Text Section */}
-          <div className="space-y-6 max-w-xl">
-            <motion.h1
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
-              }}
-              transition={{ duration: 1.2 }}
-              className="text-5xl font-bold"
-            >
-              Hi, I'm Shivam 👋
-            </motion.h1>
-
-            <motion.p
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
-              }}
-              className="text-xl text-gray-700 dark:text-gray-400 leading-relaxed"
-            >
-              Software Engineer @ Move37 AI | Backend & DevOps Engineer
+          <div className="max-w-2xl space-y-6">
+            <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-blue-400">
+              Software Engineer • Backend • DevOps
             </motion.p>
 
-            <p className="text-md text-gray-700 dark:text-gray-400 max-w-lg">
-              With 2 years of experience in backend and cloud engineering, I work on scalable APIs, automation pipelines, and production systems across Python, Go, and cloud-native infrastructure.
-            </p>
+            <motion.h1 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              Building reliable systems that scale.
+            </motion.h1>
 
-            {/* Tech Stack Badges */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 text-sm">
-              {[
-                'Python',
-                'Go',
-                'Django',
-                'FastAPI',
-                'Docker',
-                'Kubernetes',
-                'GitHub Actions',
-              ].map((tech, i) => (
-                <span
-                  key={i}
-                  className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-gray-800 dark:text-white"
-                >
+            <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              I’m Shivam Omer, a backend engineer with 2+ years of experience crafting event-driven services, microservices, and cloud-native automation across Python, Django, Kafka, Docker, Kubernetes, and AWS/Azure.
+            </motion.p>
+
+            <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="flex flex-wrap justify-center gap-2 md:justify-start">
+              {highlights.map((item) => (
+                <span key={item} className="rounded-full border border-gray-300 bg-white/80 px-3 py-1 text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-slate-900/70 dark:text-gray-200">
+                  {item}
+                </span>
+              ))}
+            </motion.div>
+
+            <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="flex flex-wrap justify-center gap-2 md:justify-start">
+              {stack.map((tech) => (
+                <span key={tech} className="rounded-full bg-gray-900 px-3 py-1 text-sm font-medium text-white dark:bg-gray-100 dark:text-gray-900">
                   {tech}
                 </span>
               ))}
-            </div>
+            </motion.div>
 
-            {/* Resume Button */}
-            <Link href="/ShivamOmer.pdf" legacyBehavior>
-              <a
-                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-medium transition shadow-lg hover:shadow-xl"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                📄 View My Resume
+            <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="flex flex-wrap justify-center gap-3 pt-2 md:justify-start">
+              <a href="/ShivamOmer.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700">
+                View Resume
               </a>
-            </Link>
-
-            {/* Call to Action */}
-            <motion.div
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
-              }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="pt-10"
-            >
-              <p className="text-lg text-gray-500 dark:text-gray-400 mb-4">
-                Interested in working together?
-              </p>
               <Link href="/contact" legacyBehavior>
-                <a className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full text-sm font-medium transition">
-                  🤝 Let’s Connect
+                <a className="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-800 transition hover:border-blue-500 hover:text-blue-600 dark:border-gray-700 dark:text-gray-200">
+                  Let’s Connect
                 </a>
               </Link>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                Available for freelance projects and full-time opportunities.
-              </p>
             </motion.div>
           </div>
         </motion.div>

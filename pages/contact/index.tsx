@@ -1,45 +1,40 @@
 import Head from 'next/head';
-import { FaEnvelope, FaGithub, FaLinkedin, FaPhone, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaPhone } from 'react-icons/fa';
+
+const links = [
+  { label: 'Email', href: 'mailto:shivamrajomar@gmail.com', icon: FaEnvelope, value: 'shivamrajomar@gmail.com' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/programmer-shivam/', icon: FaLinkedin, value: 'linkedin.com/in/programmer-shivam' },
+  { label: 'GitHub', href: 'https://github.com/shane-Coder', icon: FaGithub, value: 'github.com/shane-Coder' },
+  { label: 'Phone', href: 'tel:+918303669396', icon: FaPhone, value: '+91-8303669396' },
+];
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-white text-black dark:bg-black dark:text-white px-6 py-12">
+    <main className="min-h-screen bg-white px-6 py-16 text-black dark:bg-black dark:text-white">
       <Head>
         <title>Contact | Shivam Omer</title>
       </Head>
 
-      <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-8">Contact Me</h1>
-        <p className="text-lg text-gray-700 dark:text-gray-400 mb-6">
-          Feel free to reach out via email, LinkedIn, GitHub, Twitter, or phone. I'm always open to interesting projects and conversations.
+      <div className="mx-auto max-w-3xl rounded-3xl border border-gray-200 bg-gray-50 p-8 text-center shadow-sm dark:border-gray-800 dark:bg-slate-900/60">
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">Contact</p>
+        <h1 className="mt-2 text-4xl font-bold">Let’s build something meaningful.</h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+          I’m open to backend engineering, DevOps, and product-focused engineering opportunities. Feel free to reach out for collaborations, freelance work, or full-time roles.
         </p>
 
-        <div className="flex flex-col items-center gap-4">
-          <a href="mailto:shivamrajomar@gmail.com" className="flex items-center gap-2 text-blue-500 hover:underline">
-            <FaEnvelope /> shivamrajomar@gmail.com
-          </a>
-
-          <a href="https://www.linkedin.com/in/programmer-shivam/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500 hover:underline">
-            <FaLinkedin /> LinkedIn
-          </a>
-
-          <a href="https://github.com/shane-Coder" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500 hover:underline">
-            <FaGithub /> GitHub
-          </a>
-
-          <a href="https://x.com/shivam1953811" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500 hover:underline">
-            <FaTwitter /> Twitter
-          </a>
-
-          <a href="tel:+918303669396" className="flex items-center gap-2 text-blue-500 hover:underline">
-            <FaPhone /> +91-8303669396
-          </a>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {links.map(({ label, href, icon: Icon, value }) => (
+            <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} className="flex items-center justify-start gap-3 rounded-2xl border border-gray-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-1 hover:border-blue-500 dark:border-gray-700 dark:bg-gray-950">
+              <div className="rounded-full bg-blue-100 p-3 text-blue-600 dark:bg-blue-950 dark:text-blue-400">
+                <Icon />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">{label}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 break-all">{value}</p>
+              </div>
+            </a>
+          ))}
         </div>
-
-        <p className="mt-6 text-gray-600 dark:text-gray-400 text-center">
-          Currently open for backend & DevOps roles — remote or on-site. Let’s build something great together 🚀
-        </p>
-
       </div>
     </main>
   );

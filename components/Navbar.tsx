@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { motion } from 'framer-motion'; 
+import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -26,19 +26,24 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 shadow-sm px-6 py-4 fixed w-full z-10 top-0"
+      className="bg-white/90 dark:bg-black/90 backdrop-blur border-b border-gray-200 dark:border-gray-800 shadow-sm px-6 py-4 fixed w-full z-20 top-0"
     >
-      <div className="max-w-4xl mx-auto flex justify-between items-center">
-        {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-4">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        <Link href="/" className="flex items-center gap-3" legacyBehavior>
+          <a className="font-semibold text-lg text-gray-900 dark:text-white">
+            Shivam Omer
+          </a>
+        </Link>
+
+        <div className="hidden md:flex items-center gap-5">
           {navItems.map(({ label, href }) => (
             <Link href={href} legacyBehavior key={label}>
               <a
                 className={`${
                   router.pathname === href
-                    ? 'underline font-semibold text-black dark:text-white'
-                    : 'text-gray-800 dark:text-blue-400'
-                } transition duration-300 hover:text-black-600 dark:hover:text-white`}
+                    ? 'font-semibold text-black dark:text-white'
+                    : 'text-gray-700 dark:text-gray-300'
+                } transition duration-300 hover:text-blue-600 dark:hover:text-blue-400`}
               >
                 {label}
               </a>
@@ -46,28 +51,37 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Theme Toggle (Desktop) */}
-        {mounted && (
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="text-black dark:text-white border px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 ml-4 hidden md:inline"
+        <div className="flex items-center gap-2">
+          <a
+            href="/ShivamOmer.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center rounded-full bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
           >
-            {theme === 'dark' ? '🌞 Light' : '🌙 Dark'}
-          </button>
-        )}
-
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-black dark:text-white"
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            Resume
+          </a>
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+              className="rounded-full border border-gray-300 px-2.5 py-1.5 text-sm text-gray-700 dark:border-gray-700 dark:text-gray-200"
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+          )}
+          <div className="md:hidden">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              className="text-gray-900 dark:text-white"
+            >
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden mt-4 space-y-2 text-center">
           {navItems.map(({ label, href }) => (
@@ -75,24 +89,22 @@ export default function Navbar() {
               <a
                 className={`block ${
                   router.pathname === href
-                    ? 'underline font-semibold text-black dark:text-white'
-                    : 'text-gray-800 dark:text-blue-400'
-                } transition duration-300 hover:text-black dark:hover:text-white`}
+                    ? 'font-semibold text-black dark:text-white'
+                    : 'text-gray-700 dark:text-gray-300'
+                } transition duration-300 hover:text-blue-600 dark:hover:text-blue-400`}
               >
                 {label}
               </a>
             </Link>
           ))}
-
-          {/* Theme Toggle (Mobile) */}
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="mt-2 text-black dark:text-white border px-2 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
-            >
-              {theme === 'dark' ? '🌞 Light' : '🌙 Dark'}
-            </button>
-          )}
+          <a
+            href="/ShivamOmer.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-full bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+          >
+            View Resume
+          </a>
         </div>
       )}
     </motion.nav>
