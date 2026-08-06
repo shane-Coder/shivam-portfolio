@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
@@ -62,11 +62,11 @@ export default function Navbar() {
           </a>
           {mounted && (
             <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-              className="rounded-full border border-gray-300 px-2.5 py-1.5 text-sm text-gray-700 dark:border-gray-700 dark:text-gray-200"
+              onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+              aria-label={resolvedTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+              className="rounded-full border border-gray-300 px-2.5 py-1.5 text-sm text-gray-700 transition-colors duration-300 dark:border-gray-700 dark:text-gray-200"
             >
-              {theme === 'dark' ? '☀️' : '🌙'}
+              {resolvedTheme === 'dark' ? '☀️' : '🌙'}
             </button>
           )}
           <div className="md:hidden">

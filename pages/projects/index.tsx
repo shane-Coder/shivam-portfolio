@@ -4,6 +4,20 @@ import { motion } from 'framer-motion';
 export default function Projects() {
   const projects = [
     {
+      title: 'PulseCheck — Cron Job & Scheduled Task Monitoring',
+      description:
+        'A monitoring service that catches silently failing cron jobs and scheduled tasks. Each job pings a unique URL after it runs; if the expected ping does not arrive in time, PulseCheck fires an email alert. Built with a production-style multi-service architecture and deployed live on Fly.io.',
+      tech: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Celery', 'Redis', 'JWT Auth', 'Docker', 'Fly.io'],
+      github: 'https://github.com/shane-Coder/PulseCheck',
+      live: 'https://pulsecheck-shivam.fly.dev/',
+      highlights: [
+        'Dead-man-switch monitoring: alerts fire when an expected ping goes missing, not only on explicit errors',
+        'Celery Beat + Redis background scheduler continuously checks for overdue jobs and dispatches SMTP email alerts',
+        'JWT authentication with HttpOnly cookies, backed by a server-rendered Jinja2 dashboard',
+        'Split into independently deployable web, worker, and scheduler services alongside Postgres and Redis, ready to scale from Docker Compose to Kubernetes',
+      ],
+    },
+    {
       title: 'Azure Databricks Delta Lake Pipeline',
       description:
         'Built a cloud-native data pipeline on Azure using Databricks, Delta Lake, and PySpark to ingest and transform large-scale log data with transactional and historical querying support.',
@@ -140,13 +154,13 @@ export default function Projects() {
 
               <div className="mt-5 flex flex-wrap gap-4 text-sm">
                 <Link href={project.github} legacyBehavior>
-                  <a target="_blank" className="font-medium text-blue-600 transition hover:text-blue-500">
+                  <a target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 transition hover:text-blue-500">
                     GitHub
                   </a>
                 </Link>
                 {project.live && (
                   <Link href={project.live} legacyBehavior>
-                    <a target="_blank" className="font-medium text-green-600 transition hover:text-green-500">
+                    <a target="_blank" rel="noopener noreferrer" className="font-medium text-green-600 transition hover:text-green-500">
                       Demo
                     </a>
                   </Link>
