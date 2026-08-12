@@ -1,29 +1,29 @@
-# name: Uptime check
+name: Uptime check
 
-# # PulseCheck (https://pulsecheck-shivam.fly.dev) is a dead-man's-switch
-# # monitor — it only knows something's wrong when an expected ping stops
-# # arriving. The site itself can't ping anything on its own (it's static),
-# # so this workflow is the "job" PulseCheck actually watches: it checks the
-# # live site on a schedule and only pings PulseCheck when the check passes.
-# # If the site goes down, pings stop, and PulseCheck emails an alert once
-# # its window elapses.
+# PulseCheck (https://pulsecheck-shivam.fly.dev) is a dead-man's-switch
+# monitor — it only knows something's wrong when an expected ping stops
+# arriving. The site itself can't ping anything on its own (it's static),
+# so this workflow is the "job" PulseCheck actually watches: it checks the
+# live site on a schedule and only pings PulseCheck when the check passes.
+# If the site goes down, pings stop, and PulseCheck emails an alert once
+# its window elapses.
 
-# on:
-#   schedule:
-#     - cron: "*/15 * * * *"
-#   workflow_dispatch:
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
 
-# jobs:
-#   check:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Check portfolio is up, ping PulseCheck if so
-#         run: |
-#           code=$(curl -s -o /dev/null -w '%{http_code}' https://shivam-portfolio-gold-omega.vercel.app/)
-#           echo "Portfolio responded with HTTP $code"
-#           if [ "$code" = "200" ]; then
-#             curl -fsS https://pulsecheck-shivam.fly.dev/ping/754b24dc-0722-4580-9c3c-171ff6d48484
-#           else
-#             echo "Not pinging PulseCheck — site did not return 200"
-#             exit 1
-#           fi
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check portfolio is up, ping PulseCheck if so
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' https://shivam-portfolio-gold-omega.vercel.app/)
+          echo "Portfolio responded with HTTP $code"
+          if [ "$code" = "200" ]; then
+            curl -fsS https://pulsecheck-shivam.fly.dev/ping/34113219-e890-410f-9aa3-4cf7c6ce3000
+          else
+            echo "Not pinging PulseCheck — site did not return 200"
+            exit 1
+          fi
