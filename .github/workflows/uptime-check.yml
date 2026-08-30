@@ -9,8 +9,12 @@ name: Uptime check
 # its window elapses.
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
+  # Schedule paused: PulseCheck's Fly.io machines (worker + Postgres) are
+  # stopped to cut hosting cost, so pings here would just fail every 15
+  # minutes for no reason. Re-enable the schedule line once PulseCheck is
+  # running again. workflow_dispatch is kept so it can still be run by hand.
+  # schedule:
+  #   - cron: "*/15 * * * *"
   workflow_dispatch:
 
 jobs:
