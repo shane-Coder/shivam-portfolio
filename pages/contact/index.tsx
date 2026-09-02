@@ -17,7 +17,7 @@ export default function Contact() {
 
       <div className="mx-auto max-w-3xl rounded-3xl border border-gray-200 bg-gray-50 p-8 text-center shadow-sm dark:border-gray-800 dark:bg-slate-900/60">
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">Contact</p>
-        <h1 className="mt-2 text-4xl font-bold">Let’s build something meaningful.</h1>
+        <h1 className="mt-2 text-4xl font-bold sm:text-5xl">Let’s build something meaningful.</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
           I’m open to backend engineering, DevOps, and product-focused engineering opportunities. Feel free to reach out for collaborations, freelance work, or full-time roles.
         </p>

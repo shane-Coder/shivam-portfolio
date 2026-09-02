@@ -22,11 +22,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check portfolio is up, ping PulseCheck if so
+        env:
+          # Set via: repo Settings → Secrets and variables → Actions → New
+          # repository secret, named PULSECHECK_PING_URL. Was previously
+          # hardcoded here — moved to a secret so the ping URL (which anyone
+          # could otherwise replay to fake a healthy check) isn't sitting in
+          # a public repo in plain text.
+          PULSECHECK_PING_URL: ${{ secrets.PULSECHECK_PING_URL }}
         run: |
           code=$(curl -s -o /dev/null -w '%{http_code}' https://shivam-portfolio-gold-omega.vercel.app/)
           echo "Portfolio responded with HTTP $code"
           if [ "$code" = "200" ]; then
-            curl -fsS https://pulsecheck-shivam.fly.dev/ping/34113219-e890-410f-9aa3-4cf7c6ce3000
+            curl -fsS "$PULSECHECK_PING_URL"
           else
             echo "Not pinging PulseCheck — site did not return 200"
             exit 1

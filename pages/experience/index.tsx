@@ -1,53 +1,41 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Badge from '../../components/Badge';
+
+const experiences = [
+  {
+    company: 'Move37AI',
+    logo: '/move37-logo.png',
+    role: 'Software Development Engineer',
+    duration: 'Jan 2026 – Present',
+    location: 'Delhi, India',
+    highlights: [
+      'Developed event-driven backend services using Python, Django, Kafka, and MongoDB for high-volume asynchronous workflows.',
+      'Designed RESTful microservices for import-export and accounts receivable systems to improve orchestration and scalability.',
+      'Implemented Kafka-based producer-consumer pipelines with resilient retry handling and asynchronous processing.',
+      'Containerized applications with Docker and streamlined Linux-based deployment workflows across development and cloud environments.',
+    ],
+    tech: ['Python', 'Django', 'Kafka', 'MongoDB', 'Docker', 'Microservices', 'APIs'],
+  },
+  {
+    company: 'Solytics Partners',
+    logo: '/solytics-logo.png',
+    role: 'Backend Developer',
+    duration: 'Mar 2024 – Dec 2025',
+    location: 'Pune, India',
+    highlights: [
+      'Engineered WarpDrive, a Python-based distributed task execution framework that reduced task execution latency by nearly 80% across distributed notebook workflows.',
+      'Re-architected asynchronous execution services using Django and Golang, accelerating processing throughput by 4x for large-scale analytical workloads.',
+      'Automated CI/CD pipelines with Jenkins, Groovy, Docker, and Kubernetes, decreasing manual deployment effort by over 90% and cutting release cycles from days to under 1 hour.',
+      'Provisioned cloud-native infrastructure for 10+ services using Terraform, Helm, and AWS, improving deployment consistency and reducing configuration drift incidents.',
+      'Built scalable backend APIs and orchestration layers supporting 100+ concurrent execution pipelines with fault-tolerant retry and microservice coordination.',
+    ],
+    tech: ['Python', 'Django', 'Golang', 'PostgreSQL', 'Jenkins', 'Docker', 'Kubernetes', 'Terraform', 'Helm', 'AWS', 'CI/CD'],
+  },
+];
 
 export default function Experience() {
-  const experiences = [
-    {
-      company: 'Move37AI',
-      logo: '/move37-logo.png',
-      role: 'Software Developer Engineer',
-      duration: 'Jan 2026 – Present',
-      location: 'Delhi, India',
-      highlights: [
-        'Developed event-driven backend services using Python, Django, Kafka, and MongoDB for high-volume asynchronous workflows.',
-        'Designed RESTful microservices for import-export and accounts receivable systems to improve orchestration and scalability.',
-        'Implemented Kafka-based producer-consumer pipelines with resilient retry handling and asynchronous processing.',
-        'Containerized applications with Docker and streamlined Linux-based deployment workflows across development and cloud environments.',
-      ],
-      tech: ['Python', 'Django', 'Kafka', 'MongoDB', 'Docker', 'Microservices', 'APIs'],
-    },
-    {
-      company: 'Solytics Partners',
-      logo: '/solytics-logo.png',
-      roles: [
-        {
-          title: 'Backend Developer',
-          duration: 'Mar 2024 – Feb 2025',
-          location: 'Pune, India',
-          highlights: [
-            'Engineered WarpDrive, a Python-based execution framework that reduced task execution latency by nearly 80%.',
-            'Re-architected asynchronous execution services using Django and Golang to accelerate large-scale analytical workloads.',
-            'Built backend APIs and orchestration layers supporting concurrent execution workflows and distributed processing.',
-          ],
-          tech: ['Python', 'Django', 'Golang', 'PostgreSQL', 'REST APIs'],
-        },
-        {
-          title: 'DevOps Consultant',
-          duration: 'Mar 2025 – Dec 2025',
-          location: 'Pune, India',
-          highlights: [
-            'Automated CI/CD pipelines with Jenkins, Groovy, Docker, and Kubernetes, cutting manual deployment effort by over 90%.',
-            'Provisioned cloud-native infrastructure with Terraform, Helm, and AWS services to improve deployment consistency and operational reliability.',
-            'Supported multi-cloud environments and infrastructure automation for production systems.',
-          ],
-          tech: ['Docker', 'Kubernetes', 'Terraform', 'Helm', 'AWS', 'Jenkins', 'CI/CD'],
-        },
-      ],
-    },
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -79,45 +67,20 @@ export default function Experience() {
                   )}
                   <div>
                     <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">{exp.company}</h2>
-                    {!exp.roles && <p className="text-sm text-gray-600 dark:text-gray-400">{exp.role} • {exp.duration} • {exp.location}</p>}
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{exp.role} • {exp.duration} • {exp.location}</p>
                   </div>
                 </div>
 
-                {!exp.roles && (
-                  <>
-                    <ul className="mt-5 list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
-                      {exp.highlights.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {exp.tech.map((t, i) => (
-                        <span key={i} className="rounded-full bg-white px-3 py-1 text-sm text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-200">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </>
-                )}
-
-                {exp.roles && exp.roles.map((role, i) => (
-                  <div key={i} className="mt-5 rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-950/70">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-white">{role.title}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{role.duration} • {role.location}</p>
-                    <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
-                      {role.highlights.map((point, j) => (
-                        <li key={j}>{point}</li>
-                      ))}
-                    </ul>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {role.tech.map((t, k) => (
-                        <span key={k} className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-200">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                <ul className="mt-5 list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+                  {exp.highlights.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {exp.tech.map((t, i) => (
+                    <Badge key={i}>{t}</Badge>
+                  ))}
+                </div>
               </section>
             ))}
           </div>

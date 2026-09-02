@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import Head from 'next/head';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -24,12 +25,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:description" content="Building scalable APIs, event-driven services, and cloud-native infrastructure with Python and modern DevOps practices." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://shivam-portfolio-gold-omega.vercel.app/" />
-        <meta property="og:image" content="/profile.jpg" />
+        <meta property="og:image" content="/og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Shivam Omer | Backend Developer & DevOps Engineer" />
         <meta name="twitter:description" content="Python, Django, Kafka, Docker, Kubernetes, AWS/Azure — building reliable systems at scale." />
-        <meta name="twitter:image" content="/profile.jpg" />
+        <meta name="twitter:image" content="/og-image.png" />
 
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#0f172a" />
@@ -65,8 +66,11 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <Navbar />
-      <div className="pt-20">
-        <Component {...pageProps} />
+      <div className="flex min-h-screen flex-col pt-20">
+        <div className="flex-1">
+          <Component {...pageProps} />
+        </div>
+        <Footer />
       </div>
     </ThemeProvider>
   );

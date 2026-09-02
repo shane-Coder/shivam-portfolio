@@ -22,7 +22,7 @@ export default function Home() {
         <meta property="og:title" content="Shivam Omer Portfolio" />
         <meta property="og:description" content="Backend Developer & DevOps Engineer specializing in scalable APIs, distributed systems, and automation." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/profile.jpg" />
+        <meta property="og:image" content="/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0f172a" />
         <link rel="icon" href="/favicon.ico" />

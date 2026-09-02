@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Badge from '../../components/Badge';
 
 export default function Projects() {
   const projects = [
@@ -146,9 +147,7 @@ export default function Projects() {
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.tech.map((tech, i) => (
-                  <span key={i} className="rounded-full bg-white px-2.5 py-1 text-sm text-gray-700 shadow-sm dark:bg-gray-800 dark:text-gray-200">
-                    {tech}
-                  </span>
+                  <Badge key={i}>{tech}</Badge>
                 ))}
               </div>
 

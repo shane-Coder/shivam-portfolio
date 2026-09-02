@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import Badge from '../../components/Badge';
 
 const strengths = [
   'Designing event-driven backend services and microservices',
@@ -70,9 +71,7 @@ export default function About() {
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {tools.map((tool) => (
-                  <span key={tool} className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-200">
-                    {tool}
-                  </span>
+                  <Badge key={tool}>{tool}</Badge>
                 ))}
               </div>
             </div>
@@ -82,7 +81,7 @@ export default function About() {
             <h2 className="text-2xl font-semibold">Experience Snapshot</h2>
             <div className="mt-4 space-y-4 text-gray-700 dark:text-gray-300">
               <div>
-                <p className="font-semibold text-gray-900 dark:text-white">Software Developer Engineer — Move37AI</p>
+                <p className="font-semibold text-gray-900 dark:text-white">Software Development Engineer — Move37AI</p>
                 <p className="text-sm text-gray-500">Jan 2026 – Present</p>
                 <p className="mt-2">Built event-driven backend services using Python, Django, Kafka, and MongoDB and contributed to high-volume asynchronous workflows and real-time notifications.</p>
               </div>

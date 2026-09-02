@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shivam-portfolio-gold-omega.vercel.app/sitemap.xml

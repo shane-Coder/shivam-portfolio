@@ -18,8 +18,12 @@ export default function Navbar() {
     { label: 'About', href: '/about' },
     { label: 'Experience', href: '/experience' },
     { label: 'Projects', href: '/projects' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ];
+
+  const isActive = (href: string) =>
+    href === '/' ? router.pathname === '/' : router.pathname.startsWith(href);
 
   return (
     <motion.nav
@@ -40,7 +44,7 @@ export default function Navbar() {
             <Link href={href} legacyBehavior key={label}>
               <a
                 className={`${
-                  router.pathname === href
+                  isActive(href)
                     ? 'font-semibold text-black dark:text-white'
                     : 'text-gray-700 dark:text-gray-300'
                 } transition duration-300 hover:text-blue-600 dark:hover:text-blue-400`}
@@ -88,7 +92,7 @@ export default function Navbar() {
             <Link href={href} legacyBehavior key={label}>
               <a
                 className={`block ${
-                  router.pathname === href
+                  isActive(href)
                     ? 'font-semibold text-black dark:text-white'
                     : 'text-gray-700 dark:text-gray-300'
                 } transition duration-300 hover:text-blue-600 dark:hover:text-blue-400`}
