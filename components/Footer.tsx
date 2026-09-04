@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-white px-6 py-10 text-sm text-gray-600 dark:border-gray-800 dark:bg-black dark:text-gray-400">
+    <footer className="border-t border-zinc-200 bg-zinc-50 px-6 py-10 text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-400">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
         <p>© {new Date().getFullYear()} Shivam Omer. Built with Next.js &amp; Tailwind CSS.</p>
 
@@ -12,7 +12,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="transition hover:text-blue-600 dark:hover:text-blue-400"
+            className="transition hover:text-teal-600 dark:hover:text-teal-400"
           >
             <FaGithub />
           </a>
@@ -21,14 +21,14 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="transition hover:text-blue-600 dark:hover:text-blue-400"
+            className="transition hover:text-teal-600 dark:hover:text-teal-400"
           >
             <FaLinkedin />
           </a>
           <a
             href="mailto:shivamrajomar@gmail.com"
             aria-label="Email"
-            className="transition hover:text-blue-600 dark:hover:text-blue-400"
+            className="transition hover:text-teal-600 dark:hover:text-teal-400"
           >
             <FaEnvelope />
           </a>
@@ -38,7 +38,7 @@ export default function Footer() {
           href="https://github.com/shane-Coder/PulseCheck"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 px-3 py-1 text-xs font-medium text-gray-700 transition hover:border-blue-500 hover:text-blue-600 dark:border-gray-700 dark:text-gray-300 dark:hover:text-blue-400"
+          className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 transition hover:border-teal-500 hover:text-teal-600 dark:border-zinc-700 dark:text-zinc-300 dark:hover:text-teal-400"
         >
           Built with PulseCheck — my cron monitoring project ↗
         </a>

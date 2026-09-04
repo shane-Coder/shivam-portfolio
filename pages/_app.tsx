@@ -25,15 +25,15 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:description" content="Building scalable APIs, event-driven services, and cloud-native infrastructure with Python and modern DevOps practices." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://shivam-portfolio-gold-omega.vercel.app/" />
-        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:image" content="https://shivam-portfolio-gold-omega.vercel.app/og-image.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Shivam Omer | Backend Developer & DevOps Engineer" />
         <meta name="twitter:description" content="Python, Django, Kafka, Docker, Kubernetes, AWS/Azure — building reliable systems at scale." />
-        <meta name="twitter:image" content="/og-image.png" />
+        <meta name="twitter:image" content="https://shivam-portfolio-gold-omega.vercel.app/og-image.png" />
 
         <link rel="icon" href="/favicon.ico" />
-        <meta name="theme-color" content="#0f172a" />
+        <meta name="theme-color" content="#09090b" />
 
         <script
           type="application/ld+json"

@@ -43,7 +43,7 @@ export default function Experience() {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <main className="min-h-screen bg-white px-6 py-16 text-black dark:bg-black dark:text-white">
+      <main className="min-h-screen bg-zinc-50 px-6 py-16 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <Head>
           <title>Experience | Shivam Omer</title>
           <meta name="description" content="Professional experience of Shivam Omer — backend developer and DevOps engineer focused on scalable systems and cloud automation." />
@@ -51,27 +51,27 @@ export default function Experience() {
 
         <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">Experience</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">Experience</p>
             <h1 className="mt-2 text-4xl font-bold sm:text-5xl">Professional Journey</h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-700 dark:text-zinc-300">
               Building scalable backend systems and reliable cloud infrastructure across startup and enterprise environments.
             </p>
           </div>
 
           <div className="space-y-8">
             {experiences.map((exp, idx) => (
-              <section key={idx} className="rounded-3xl border border-gray-200 bg-gray-50 p-6 shadow-sm dark:border-gray-800 dark:bg-slate-900/60">
+              <section key={idx} className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/60">
                 <div className="flex flex-wrap items-center gap-3">
                   {exp.logo && (
                     <Image src={exp.logo} alt={`${exp.company} logo`} width={42} height={42} className="rounded-md" />
                   )}
                   <div>
-                    <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">{exp.company}</h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{exp.role} • {exp.duration} • {exp.location}</p>
+                    <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100">{exp.company}</h2>
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400">{exp.role} • {exp.duration} • {exp.location}</p>
                   </div>
                 </div>
 
-                <ul className="mt-5 list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+                <ul className="mt-5 list-disc space-y-2 pl-5 text-zinc-700 dark:text-zinc-300">
                   {exp.highlights.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}

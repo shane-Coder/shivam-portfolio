@@ -15,7 +15,7 @@ const posts = [
 
 export default function Blog() {
   return (
-    <main className="min-h-screen bg-white px-6 py-16 text-black dark:bg-black dark:text-white">
+    <main className="min-h-screen bg-zinc-50 px-6 py-16 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Head>
         <title>Blog | Shivam Omer</title>
         <meta
@@ -26,9 +26,9 @@ export default function Blog() {
 
       <div className="mx-auto max-w-3xl">
         <div className="mb-10 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">Blog</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">Blog</p>
           <h1 className="mt-2 text-4xl font-bold sm:text-5xl">Writing</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-700 dark:text-zinc-300">
             Notes on things I build — the decisions, trade-offs, and the parts that didn’t work the first time.
           </p>
         </div>
@@ -44,14 +44,14 @@ export default function Blog() {
             >
               <Link
                 href={`/blog/${post.slug}`}
-                className="block rounded-3xl border border-gray-200 bg-gray-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-slate-900/60"
+                className="block rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900/60"
               >
-                <p className="text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
                   {post.date} · {post.readTime}
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold text-gradient">{post.title}</h2>
-                <p className="mt-3 text-gray-700 dark:text-gray-400">{post.excerpt}</p>
-                <p className="mt-4 text-sm font-medium text-blue-600 dark:text-blue-400">Read more →</p>
+                <p className="mt-3 text-zinc-700 dark:text-zinc-400">{post.excerpt}</p>
+                <p className="mt-4 text-sm font-medium text-teal-600 dark:text-teal-400">Read more →</p>
               </Link>
             </motion.article>
           ))}

@@ -13,7 +13,7 @@ export default function PulseCheckPost() {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <main className="min-h-screen bg-white px-6 py-16 text-black dark:bg-black dark:text-white">
+      <main className="min-h-screen bg-zinc-50 px-6 py-16 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <Head>
           <title>Building PulseCheck | Shivam Omer</title>
           <meta
@@ -23,19 +23,19 @@ export default function PulseCheckPost() {
         </Head>
 
         <article className="mx-auto max-w-3xl">
-          <Link href="/blog" className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400">
+          <Link href="/blog" className="text-sm font-medium text-teal-600 hover:underline dark:text-teal-400">
             ← Back to Blog
           </Link>
 
-          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">
+          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">
             Case Study
           </p>
           <h1 className="mt-2 text-4xl font-bold sm:text-5xl">
             Building PulseCheck: a dead-man’s-switch monitor for cron jobs
           </h1>
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">September 2026 · 6 min read</p>
+          <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">September 2026 · 6 min read</p>
 
-          <div className="prose-content mt-10 space-y-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <div className="prose-content mt-10 space-y-6 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
             <p>
               Most monitoring answers “is this thing throwing errors?” That’s the wrong question for a huge class of
               backend work — cron jobs, scheduled ETL runs, nightly backups, batch report generators. Those jobs don’t
@@ -52,19 +52,19 @@ export default function PulseCheckPost() {
                 href="https://github.com/shane-Coder/PulseCheck"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline dark:text-blue-400"
+                className="text-teal-600 hover:underline dark:text-teal-400"
               >
                 github.com/shane-Coder/PulseCheck
               </a>
               .
             </p>
 
-            <h2 className="pt-4 text-2xl font-semibold text-gray-900 dark:text-white">The idea: a dead man’s switch</h2>
+            <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">The idea: a dead man’s switch</h2>
             <p>
               The model borrows directly from dead-man’s-switch design in safety-critical systems: instead of waiting
               for a failure signal, you wait for the absence of a success signal. Every monitor in PulseCheck gets a
               unique ping URL. You add one line to the end of your cron job —{' '}
-              <code className="rounded bg-gray-100 px-1.5 py-0.5 text-base dark:bg-gray-800">
+              <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">
                 curl https://pulsecheck-shivam.fly.dev/ping/&lt;id&gt;
               </code>{' '}
               — and PulseCheck expects that ping on a schedule you define. If the ping doesn’t arrive within the
@@ -72,7 +72,7 @@ export default function PulseCheckPost() {
               report success explicitly; showing up on time <em>is</em> the success signal.
             </p>
 
-            <h2 className="pt-4 text-2xl font-semibold text-gray-900 dark:text-white">Architecture</h2>
+            <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Architecture</h2>
             <p>
               The whole point of a monitoring tool is that it has to be more reliable than the thing it’s watching, so
               I deliberately kept the design boring and split into separately deployable pieces rather than one
@@ -91,7 +91,7 @@ export default function PulseCheckPost() {
               on Fly.io.
             </p>
 
-            <h2 className="pt-4 text-2xl font-semibold text-gray-900 dark:text-white">A few decisions worth explaining</h2>
+            <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">A few decisions worth explaining</h2>
             <p>
               <strong>Server-rendered Jinja2 over a JS framework.</strong> For v1, a SPA would have bought me nothing
               — the dashboard is mostly forms and tables — and would have doubled the deploy surface. Server-rendered
@@ -111,13 +111,13 @@ export default function PulseCheckPost() {
               real user.
             </p>
 
-            <h2 className="pt-4 text-2xl font-semibold text-gray-900 dark:text-white">Where it stands right now</h2>
+            <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Where it stands right now</h2>
             <p>
               Being honest about the current state: the live demo is temporarily paused while I finish a UI rebuild
               and an infrastructure change, so the link below currently lands on a small maintenance page rather than
               the dashboard. The source, README, and full commit history are always up on GitHub if you want to look
               at the actual implementation in the meantime — or{' '}
-              <Link href="/contact" className="text-blue-600 hover:underline dark:text-blue-400">
+              <Link href="/contact" className="text-teal-600 hover:underline dark:text-teal-400">
                 reach out
               </Link>{' '}
               and I’ll walk you through it live.
@@ -129,12 +129,12 @@ export default function PulseCheckPost() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4 border-t border-gray-200 pt-6 text-sm dark:border-gray-800">
+            <div className="mt-8 flex flex-wrap gap-4 border-t border-zinc-200 pt-6 text-sm dark:border-zinc-800">
               <a
                 href="https://github.com/shane-Coder/PulseCheck"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-blue-600 transition hover:text-blue-500"
+                className="font-medium text-teal-600 transition hover:text-teal-500"
               >
                 GitHub
               </a>
@@ -146,7 +146,7 @@ export default function PulseCheckPost() {
               >
                 Live Demo
               </a>
-              <Link href="/projects" className="font-medium text-gray-600 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+              <Link href="/projects" className="font-medium text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100">
                 See all Projects
               </Link>
             </div>

@@ -24,7 +24,6 @@ export default function Projects() {
         'Built a cloud-native data pipeline on Azure using Databricks, Delta Lake, and PySpark to ingest and transform large-scale log data with transactional and historical querying support.',
       tech: ['Azure', 'Databricks', 'Delta Lake', 'PySpark', 'SQL'],
       github: 'https://github.com/shane-Coder/azure-databricks-delta-lake-pipeline',
-      live: 'https://github.com/shane-Coder/azure-databricks-delta-lake-pipeline',
       highlights: [
         'Implemented micro-batch processing for analytical workloads',
         'Designed a production-style log analytics workflow',
@@ -37,7 +36,6 @@ export default function Projects() {
         'Designed a distributed log ingestion platform capable of processing thousands of asynchronous events with Kafka-driven streaming, real-time alerting, and analytics-ready storage.',
       tech: ['Django', 'Kafka', 'MongoDB', 'Docker', 'Microservices'],
       github: 'https://github.com/shane-Coder/log-management-microservice',
-      live: 'https://github.com/shane-Coder/log-management-microservice',
       highlights: [
         'Built asynchronous pipelines for high-throughput ingestion',
         'Enabled decoupled producer-consumer architecture',
@@ -50,7 +48,6 @@ export default function Projects() {
         'Built an async notification engine supporting email and SMS workflows through decoupled microservices and resilient message queue orchestration.',
       tech: ['Django', 'Kafka', 'MongoDB', 'Docker', 'Async Processing'],
       github: 'https://github.com/shane-Coder/event-driven-notification-system',
-      live: 'https://github.com/shane-Coder/event-driven-notification-system',
       highlights: [
         'Designed resilient message processing flows',
         'Improved reliability through decoupled services',
@@ -63,7 +60,6 @@ export default function Projects() {
         'A fast and efficient CLI tool built in Go to organize files by extension with safe directory handling and cross-platform support.',
       tech: ['Go', 'CLI', 'Automation', 'Filesystem'],
       github: 'https://github.com/shane-Coder/file-organizer-cli',
-      live: 'https://github.com/shane-Coder/file-organizer-cli',
       highlights: ['Cross-platform file automation', 'Simple and practical developer utility', 'Built with Go standard library'],
     },
     {
@@ -81,7 +77,6 @@ export default function Projects() {
         'A personal repository documenting my journey learning Golang through practical examples, mini-projects, and hands-on experimentation.',
       tech: ['Go', 'Learning', 'Algorithms', 'CLI'],
       github: 'https://github.com/shane-Coder/learning-go',
-      live: 'https://github.com/shane-Coder/learning-go',
       highlights: ['Consistent practice through real examples', 'Strong grasp of Go fundamentals', 'Useful for iterative learning'],
     },
     {
@@ -90,7 +85,6 @@ export default function Projects() {
         'A blockchain-based carpool platform designed to reduce ride costs with transparent peer-to-peer transactions and secure smart contracts.',
       tech: ['Node.js', 'ExpressJS', 'Solidity', 'Blockchain'],
       github: 'https://github.com/shane-Coder/RideShare',
-      live: 'https://github.com/shane-Coder/RideShare',
       highlights: ['Built with blockchain concepts', 'Peer-to-peer transport experience', 'Full-stack project experimentation'],
     },
     {
@@ -99,7 +93,6 @@ export default function Projects() {
         'A scalable e-commerce project with user authentication, cart-to-checkout flow, and a Django-based backend foundation.',
       tech: ['Python', 'Django', 'SQLite', 'Web App'],
       github: 'https://github.com/shane-Coder/shopping',
-      live: 'https://github.com/shane-Coder/shopping',
       highlights: ['Product-oriented backend experience', 'Authentication and business flows', 'Practical full-stack implementation'],
     },
     {
@@ -108,18 +101,17 @@ export default function Projects() {
         'A secure image upload system focused on metadata handling, backend reliability, and smooth media interactions.',
       tech: ['Python', 'Django', 'Pillow', 'File Handling'],
       github: 'https://github.com/shane-Coder/Image-Uploader',
-      live: 'https://github.com/shane-Coder/Image-Uploader',
       highlights: ['File processing and upload workflow', 'Backend-focused media handling', 'Practical application design'],
     },
   ];
 
   return (
-    <main className="min-h-screen bg-white px-6 py-16 text-black dark:bg-black dark:text-white">
+    <main className="min-h-screen bg-zinc-50 px-6 py-16 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600 dark:text-blue-400">Projects</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">Projects</p>
           <h1 className="mt-2 text-4xl font-bold sm:text-5xl">Selected Work</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-700 dark:text-gray-300">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-700 dark:text-zinc-300">
             A broader look at the work I have built across backend systems, cloud data pipelines, automation, and product-oriented applications.
           </p>
         </div>
@@ -132,13 +124,13 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-3xl border border-gray-200 bg-gray-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-slate-900/60"
+              className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900/60"
             >
               <h2 className="text-2xl font-semibold text-gradient">{project.title}</h2>
-              <p className="mt-3 text-gray-700 dark:text-gray-400">{project.description}</p>
+              <p className="mt-3 text-zinc-700 dark:text-zinc-400">{project.description}</p>
 
               {project.highlights && (
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-600 dark:text-gray-400">
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-600 dark:text-zinc-400">
                   {project.highlights.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
@@ -153,7 +145,7 @@ export default function Projects() {
 
               <div className="mt-5 flex flex-wrap gap-4 text-sm">
                 <Link href={project.github} legacyBehavior>
-                  <a target="_blank" rel="noopener noreferrer" className="font-medium text-blue-600 transition hover:text-blue-500">
+                  <a target="_blank" rel="noopener noreferrer" className="font-medium text-teal-600 transition hover:text-teal-500">
                     GitHub
                   </a>
                 </Link>
