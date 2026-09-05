@@ -15,3 +15,6 @@ yarn-error.log*
 .venv/
 tsconfig.tsbuildinfo
 .claude/
+/test-results/
+/playwright-report/
+/playwright/.cache/
