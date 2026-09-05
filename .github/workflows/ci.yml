@@ -1,0 +1,30 @@
+name: CI
+
+# Catches broken builds and type errors before they reach main — runs on
+# every push and pull request. This is separate from Vercel's own deploy
+# build so a failure shows up as a red check on the PR itself, not just as
+# a failed deployment after the fact.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build

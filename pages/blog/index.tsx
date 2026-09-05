@@ -22,6 +22,7 @@ export default function Blog() {
           name="description"
           content="Notes on backend engineering, DevOps, and building production systems — starting with PulseCheck, a cron job monitoring service."
         />
+        <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/blog" />
       </Head>
 
       <div className="mx-auto max-w-3xl">

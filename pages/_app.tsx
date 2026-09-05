@@ -40,26 +40,39 @@ export default function App({ Component, pageProps }: AppProps) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Shivam Omer',
-              url: 'https://shivam-portfolio-gold-omega.vercel.app/',
-              sameAs: [
-                'https://www.linkedin.com/in/programmer-shivam/',
-                'https://github.com/shane-Coder',
-                'https://shivam-portfolio-gold-omega.vercel.app/',
+              '@graph': [
+                {
+                  '@type': 'Person',
+                  '@id': 'https://shivam-portfolio-gold-omega.vercel.app/#person',
+                  name: 'Shivam Omer',
+                  url: 'https://shivam-portfolio-gold-omega.vercel.app/',
+                  sameAs: [
+                    'https://www.linkedin.com/in/programmer-shivam/',
+                    'https://github.com/shane-Coder',
+                  ],
+                  jobTitle: 'Backend Developer & DevOps Engineer',
+                  worksFor: {
+                    '@type': 'Organization',
+                    name: 'Move37AI',
+                  },
+                  alumniOf: {
+                    '@type': 'CollegeOrUniversity',
+                    name: 'Dr. A.P.J. Abdul Kalam Technical University (AKTU)',
+                  },
+                  knowsAbout: ['Python', 'Django', 'FastAPI', 'Kafka', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Terraform', 'CI/CD'],
+                  image: 'https://shivam-portfolio-gold-omega.vercel.app/profile.jpg',
+                  description: 'Backend Developer & DevOps Engineer building scalable APIs, automation pipelines, and cloud infrastructure with Python, Django, Kafka, and AWS/Azure.',
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://shivam-portfolio-gold-omega.vercel.app/#website',
+                  url: 'https://shivam-portfolio-gold-omega.vercel.app/',
+                  name: 'Shivam Omer | Backend Developer & DevOps Engineer',
+                  description: 'Portfolio of Shivam Omer — Backend Developer and DevOps Engineer skilled in Python, Django, Kafka, Docker, Kubernetes, AWS, and Azure.',
+                  publisher: { '@id': 'https://shivam-portfolio-gold-omega.vercel.app/#person' },
+                  inLanguage: 'en',
+                },
               ],
-              jobTitle: 'Backend Developer & DevOps Engineer',
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Move37AI',
-              },
-              alumniOf: {
-                '@type': 'CollegeOrUniversity',
-                name: 'Dr. A.P.J. Abdul Kalam Technical University (AKTU)',
-              },
-              knowsAbout: ['Python', 'Django', 'FastAPI', 'Kafka', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Terraform', 'CI/CD'],
-              image: 'https://shivam-portfolio-gold-omega.vercel.app/profile.jpg',
-              description: 'Backend Developer & DevOps Engineer building scalable APIs, automation pipelines, and cloud infrastructure with Python, Django, Kafka, and AWS/Azure.',
             }),
           }}
         />

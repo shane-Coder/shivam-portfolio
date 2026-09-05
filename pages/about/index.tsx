@@ -23,6 +23,7 @@ export default function About() {
         <Head>
           <title>About — Shivam Omer</title>
           <meta name="description" content="About Shivam Omer — a backend engineer and DevOps professional focused on scalable systems, automation, and cloud-native development." />
+          <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/about" />
         </Head>
 
         <div className="mx-auto flex max-w-5xl flex-col gap-8">

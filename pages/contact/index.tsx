@@ -12,6 +12,11 @@ export default function Contact() {
     <main className="min-h-screen bg-zinc-50 px-6 py-16 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <Head>
         <title>Contact | Shivam Omer</title>
+        <meta
+          name="description"
+          content="Get in touch with Shivam Omer for full-time backend and DevOps roles, or freelance engagements in Docker, CI/CD, Terraform, and Kubernetes."
+        />
+        <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/contact" />
       </Head>
 
       <div className="mx-auto max-w-3xl rounded-3xl border border-zinc-200 bg-white p-8 text-center shadow-sm dark:border-zinc-800 dark:bg-zinc-900/60">

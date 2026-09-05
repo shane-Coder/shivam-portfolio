@@ -20,6 +20,7 @@ export default function PulseCheckPost() {
             name="description"
             content="How and why I built PulseCheck, a dead-man's-switch monitoring service for cron jobs and scheduled tasks — architecture, trade-offs, and lessons from running it in production."
           />
+          <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/blog/pulsecheck" />
         </Head>
 
         <article className="mx-auto max-w-3xl">

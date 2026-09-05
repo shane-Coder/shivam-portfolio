@@ -47,6 +47,7 @@ export default function Experience() {
         <Head>
           <title>Experience | Shivam Omer</title>
           <meta name="description" content="Professional experience of Shivam Omer — backend developer and DevOps engineer focused on scalable systems and cloud automation." />
+          <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/experience" />
         </Head>
 
         <div className="mx-auto max-w-5xl">
