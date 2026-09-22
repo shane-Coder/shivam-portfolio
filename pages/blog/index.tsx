@@ -4,10 +4,18 @@ import { motion } from 'framer-motion';
 
 const posts = [
   {
+    slug: 'nyotanow',
+    title: 'NyotaNow: what broke while building invitations for Indian families',
+    date: 'September 2026',
+    readTime: '7 min read',
+    excerpt:
+      'An invitation should be a link, not a picture. Building that turned into a font-size rounding bug that scrambled Hindi titles, a preview renderer that cannot shape Devanagari, and a deploy setting that would have failed on the first invite.',
+  },
+  {
     slug: 'pulsecheck',
     title: 'Building PulseCheck: a dead-man’s-switch monitor for cron jobs',
-    date: 'September 2026',
-    readTime: '6 min read',
+    date: 'August 2026',
+    readTime: '7 min read',
     excerpt:
       'Why "did the job actually run?" is a harder question than it sounds, and how I built a monitoring service around the answer — FastAPI, Celery Beat, Redis, and a multi-service deploy on Fly.io.',
   },
@@ -20,7 +28,7 @@ export default function Blog() {
         <title>Blog | Shivam Omer</title>
         <meta
           name="description"
-          content="Notes on backend engineering, DevOps, and building production systems — starting with PulseCheck, a cron job monitoring service."
+          content="Notes on backend engineering, DevOps, and building production systems — from NyotaNow, a live invitation product, to PulseCheck, a cron job monitoring service."
         />
         <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/blog" />
       </Head>

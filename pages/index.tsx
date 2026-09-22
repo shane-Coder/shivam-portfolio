@@ -80,7 +80,7 @@ export default function Home() {
                 Featured
               </span>
               <span className="text-sm text-zinc-700 dark:text-zinc-300">
-                <strong className="text-zinc-900 dark:text-zinc-100">PulseCheck</strong> — a dead-man’s-switch monitor for cron jobs, live on Fly.io. Read the case study →
+                <strong className="text-zinc-900 dark:text-zinc-100">PulseCheck</strong> — dead-man's-switch monitoring with Slack/webhook alerts and status pages. Read the case study →
               </span>
             </Link>
           </motion.div>

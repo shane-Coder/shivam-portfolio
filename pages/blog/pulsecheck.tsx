@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Badge from '../../components/Badge';
 
-const stack = ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Celery', 'Redis', 'JWT Auth', 'Docker', 'Fly.io'];
+const stack = ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Redis', 'GitHub Actions', 'Docker', 'Fly.io'];
 
 export default function PulseCheckPost() {
   return (
@@ -18,7 +18,7 @@ export default function PulseCheckPost() {
           <title>Building PulseCheck | Shivam Omer</title>
           <meta
             name="description"
-            content="How and why I built PulseCheck, a dead-man's-switch monitoring service for cron jobs and scheduled tasks — architecture, trade-offs, and lessons from running it in production."
+            content="How and why I built PulseCheck, a dead-man's-switch monitoring service for cron jobs and scheduled tasks — architecture, the pivot that cut hosting cost, and what shipped since: webhook alerts, status pages, and a 41-test suite."
           />
           <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/blog/pulsecheck" />
         </Head>
@@ -34,7 +34,7 @@ export default function PulseCheckPost() {
           <h1 className="mt-2 text-4xl font-bold sm:text-5xl">
             Building PulseCheck: a dead-man’s-switch monitor for cron jobs
           </h1>
-          <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">September 2026 · 6 min read</p>
+          <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">September 2026 · 8 min read</p>
 
           <div className="prose-content mt-10 space-y-6 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
             <p>
@@ -92,6 +92,38 @@ export default function PulseCheckPost() {
               on Fly.io.
             </p>
 
+            <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+              The pivot: dropping the always-on worker
+            </h2>
+            <p>
+              That architecture was v1, and it worked — but the Celery worker and Celery Beat scheduler were two
+              processes that had to stay running 24/7 just to fire a check every couple of minutes. On Fly.io, that
+              always-on compute turned out to be the single biggest line item on the bill, bigger than the web service
+              and the database combined, for something that mostly sits idle between checks.
+            </p>
+            <p>
+              v3 replaced both with a GitHub Actions cron: the overdue-monitor sweep is now a plain function behind an
+              internal, token-guarded endpoint (<code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">POST /internal/run-overdue-check</code>),
+              and a workflow in the PulseCheck repo itself calls it on a schedule instead. Redis stuck around, but only
+              for request rate-limiting now, not as a message broker. Always-on compute is down to Postgres and the
+              web process — a change small enough to describe in one paragraph, and the kind of decision that only
+              shows up on the infra bill, never in a demo.
+            </p>
+
+            <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">What's shipped since</h2>
+            <p>
+              Past the core ping-and-alert loop, most of what's gone in since is what turns a working script into
+              something someone else could actually depend on. Slack, Discord, and generic webhook alerts alongside
+              email, so a missed job doesn't depend on someone checking their inbox. Opt-in public status pages, one
+              per account, so a monitor's uptime can be shared without sharing the dashboard. A per-account Prometheus{' '}
+              <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">/metrics</code> endpoint,
+              scoped by token, for pinning a monitor onto a Grafana board that already exists instead of asking anyone
+              to visit yet another URL. Rate limiting on every state-changing endpoint and CSRF protection on every
+              authenticated form — hardening that's invisible right up until it isn't. And a 41-test pytest suite that
+              runs against an in-memory SQLite database in CI, so all of it is covered without needing Docker or a real
+              Postgres instance just to run <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">pytest</code>.
+            </p>
+
             <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">A few decisions worth explaining</h2>
             <p>
               <strong>Server-rendered Jinja2 over a JS framework.</strong> For v1, a SPA would have bought me nothing
@@ -114,10 +146,11 @@ export default function PulseCheckPost() {
 
             <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Where it stands right now</h2>
             <p>
-              Being honest about the current state: the live demo is temporarily paused while I finish a UI rebuild
-              and an infrastructure change, so the link below currently lands on a small maintenance page rather than
-              the dashboard. The source, README, and full commit history are always up on GitHub if you want to look
-              at the actual implementation in the meantime — or{' '}
+              Being honest about the current state: the work above has shipped — the worker's gone, the webhook
+              alerts and status pages work, the test suite passes in CI — but the public demo is still sitting behind
+              a maintenance page while I finish relaunching it cost-optimized, so the link below currently lands there
+              rather than the dashboard. The source, README, and full commit history are always up on GitHub if you
+              want to look at the actual implementation in the meantime — or{' '}
               <Link href="/contact" className="text-teal-600 hover:underline dark:text-teal-400">
                 reach out
               </Link>{' '}

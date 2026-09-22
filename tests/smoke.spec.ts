@@ -12,6 +12,7 @@ const pages = [
   { path: '/contact', heading: "Let’s build something meaningful." },
   { path: '/blog', heading: 'Writing' },
   { path: '/blog/pulsecheck', heading: 'Building PulseCheck: a dead-man’s-switch monitor for cron jobs' },
+  { path: '/blog/nyotanow', heading: 'NyotaNow: what broke while building invitations for Indian families' },
 ];
 
 for (const { path, heading } of pages) {
@@ -57,4 +58,10 @@ test('Contact page primary CTA points to LinkedIn', async ({ page }) => {
   await page.goto('/contact');
   const cta = page.getByRole('link', { name: /DM me on LinkedIn/i });
   await expect(cta).toHaveAttribute('href', /linkedin\.com\/in\/programmer-shivam/);
+});
+
+test('homepage Featured card links to PulseCheck (backend/DevOps flagship)', async ({ page }) => {
+  await page.goto('/');
+  const featured = page.getByRole('link').filter({ hasText: 'Featured' });
+  await expect(featured).toHaveAttribute('href', '/blog/pulsecheck');
 });
