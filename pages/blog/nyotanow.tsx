@@ -59,6 +59,14 @@ export default function NyotaNowPost() {
             >
               Source on GitHub →
             </a>
+            <a
+              href="https://medium.com/@shivamrajomar/i-built-a-whatsapp-invite-app-for-indian-families-heres-what-broke-ac5b04eec575"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-zinc-600 transition hover:text-zinc-500 dark:text-zinc-400 dark:hover:text-zinc-300"
+            >
+              Also on Medium →
+            </a>
           </div>
 
           <div className="prose-content mt-10 space-y-6 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
