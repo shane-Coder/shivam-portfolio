@@ -25,7 +25,7 @@ const featuredProjects = [
       'A consumer product for Indian families: instead of forwarding an invitation JPG on WhatsApp, the host shares one link with a live countdown, Maps directions, and one-tap RSVP. Hindi and English are both first-class, with real Devanagari typography. Live in production on Vercel, Postgres in Singapore.',
     tech: ['Next.js 16', 'React 19', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Tailwind 4', 'Vercel', 'Neon'],
     github: 'https://github.com/shane-Coder/nyotanow',
-    live: 'https://nyotanow.vercel.app',
+    live: 'https://nyotanow.vercel.app/?utm_source=portfolio',
     caseStudy: '/blog/nyotanow',
     highlights: [
       'One card component renders the live preview, the invite page, and a 1080×1350 PNG export, sized entirely in container-query units so all three stay identical',

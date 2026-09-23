@@ -44,7 +44,7 @@ export default function NyotaNowPost() {
 
           <div className="mt-6 flex flex-wrap gap-4 text-sm">
             <a
-              href="https://nyotanow.vercel.app"
+              href="https://nyotanow.vercel.app/?utm_source=portfolio"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-green-600 transition hover:text-green-500"
@@ -202,7 +202,7 @@ export default function NyotaNowPost() {
             <p>
               Try it at{' '}
               <a
-                href="https://nyotanow.vercel.app"
+                href="https://nyotanow.vercel.app/?utm_source=portfolio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal-600 hover:underline dark:text-teal-400"
