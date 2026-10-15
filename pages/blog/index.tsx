@@ -53,7 +53,7 @@ export default function Blog() {
             >
               <Link
                 href={`/blog/${post.slug}`}
-                className="block rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900/60"
+                className="block rounded-3xl border border-zinc-200 bg-white p-6 shadow-xs transition hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900/60"
               >
                 <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
                   {post.date} · {post.readTime}

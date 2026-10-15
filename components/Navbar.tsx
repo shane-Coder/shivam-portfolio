@@ -30,27 +30,25 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-zinc-50/90 dark:bg-zinc-950/90 backdrop-blur border-b border-zinc-200 dark:border-zinc-800 shadow-sm px-6 py-4 fixed w-full z-20 top-0"
+      className="bg-zinc-50/90 dark:bg-zinc-950/90 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800 shadow-xs px-6 py-4 fixed w-full z-20 top-0"
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-3" legacyBehavior>
-          <a className="font-semibold text-lg text-zinc-900 dark:text-zinc-100">
-            Shivam Omer
-          </a>
+        <Link href="/" className="font-semibold text-lg text-zinc-900 dark:text-zinc-100">
+          Shivam Omer
         </Link>
 
         <div className="hidden md:flex items-center gap-5">
           {navItems.map(({ label, href }) => (
-            <Link href={href} legacyBehavior key={label}>
-              <a
-                className={`${
-                  isActive(href)
-                    ? 'font-semibold text-zinc-900 dark:text-zinc-100'
-                    : 'text-zinc-700 dark:text-zinc-300'
-                } transition duration-300 hover:text-teal-600 dark:hover:text-teal-400`}
-              >
-                {label}
-              </a>
+            <Link
+              href={href}
+              key={label}
+              className={`${
+                isActive(href)
+                  ? 'font-semibold text-zinc-900 dark:text-zinc-100'
+                  : 'text-zinc-700 dark:text-zinc-300'
+              } transition duration-300 hover:text-teal-600 dark:hover:text-teal-400`}
+            >
+              {label}
             </Link>
           ))}
         </div>
@@ -89,16 +87,16 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden mt-4 space-y-2 text-center">
           {navItems.map(({ label, href }) => (
-            <Link href={href} legacyBehavior key={label}>
-              <a
-                className={`block ${
-                  isActive(href)
-                    ? 'font-semibold text-zinc-900 dark:text-zinc-100'
-                    : 'text-zinc-700 dark:text-zinc-300'
-                } transition duration-300 hover:text-teal-600 dark:hover:text-teal-400`}
-              >
-                {label}
-              </a>
+            <Link
+              href={href}
+              key={label}
+              className={`block ${
+                isActive(href)
+                  ? 'font-semibold text-zinc-900 dark:text-zinc-100'
+                  : 'text-zinc-700 dark:text-zinc-300'
+              } transition duration-300 hover:text-teal-600 dark:hover:text-teal-400`}
+            >
+              {label}
             </Link>
           ))}
           <a

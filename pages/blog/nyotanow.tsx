@@ -99,7 +99,7 @@ export default function NyotaNowPost() {
               The invitation card is rendered in three different contexts: the live preview while the host types, the
               public invite page, and a 1080×1350 PNG that guests can download for WhatsApp status. Keeping three
               copies of that layout in sync would have been a maintenance trap, so the card is a single component sized
-              entirely in container-query units (<code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">cqw</code>).
+              entirely in container-query units (<code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">cqw</code>).
               Every font size, padding and border is a percentage of the card’s own width, so the same markup scales
               from a 320px thumbnail to a 1080px export with no duplicated styles.
             </p>
@@ -115,7 +115,7 @@ export default function NyotaNowPost() {
             </p>
             <p>
               The actual cause was in the export library’s style-copying code: it rounds every font size down to{' '}
-              <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">floor(px) - 0.1</code>. On
+              <code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">floor(px) - 0.1</code>. On
               a 340px card, a 34.4px title becomes 33.9px. That’s invisible, but my title sat right at a line break, so
               a fraction smaller made it fit on one line — while the copied element height stayed two lines tall, which
               pushed everything below out of place.
@@ -171,9 +171,9 @@ export default function NyotaNowPost() {
             <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Shipping it, and one deploy trap</h2>
             <p>
               Vercel’s database integration pre-fills the environment variable prefix as{' '}
-              <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">STORAGE</code>, which would
-              have created <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">STORAGE_URL</code>.
-              My code reads <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">DATABASE_URL</code>.
+              <code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">STORAGE</code>, which would
+              have created <code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">STORAGE_URL</code>.
+              My code reads <code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">DATABASE_URL</code>.
               The build would have passed, the homepage would have loaded, and the site would have failed on the very
               first invite. Defaults are worth reading.
             </p>

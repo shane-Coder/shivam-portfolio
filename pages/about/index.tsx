@@ -27,7 +27,7 @@ export default function About() {
         </Head>
 
         <div className="mx-auto flex max-w-5xl flex-col gap-8">
-          <section className="rounded-3xl border border-zinc-200 bg-gradient-to-br from-teal-50 to-white p-8 shadow-sm dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-950">
+          <section className="rounded-3xl border border-zinc-200 bg-linear-to-br from-teal-50 to-white p-8 shadow-xs dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-950">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">About Me</p>
             <h1 className="text-4xl font-bold sm:text-5xl">I build backend systems that are reliable, scalable, and production-ready.</h1>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">

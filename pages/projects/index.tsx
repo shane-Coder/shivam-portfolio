@@ -142,7 +142,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900/60"
+              className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-xs transition hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900/60"
             >
               <h2 className="text-2xl font-semibold text-gradient">{project.title}</h2>
               <p className="mt-3 text-zinc-700 dark:text-zinc-400">{project.description}</p>
@@ -162,16 +162,22 @@ export default function Projects() {
               </div>
 
               <div className="mt-5 flex flex-wrap gap-4 text-sm">
-                <Link href={project.github} legacyBehavior>
-                  <a target="_blank" rel="noopener noreferrer" className="font-medium text-teal-600 transition hover:text-teal-500">
-                    GitHub
-                  </a>
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-teal-600 transition hover:text-teal-500"
+                >
+                  GitHub
                 </Link>
                 {project.live && (
-                  <Link href={project.live} legacyBehavior>
-                    <a target="_blank" rel="noopener noreferrer" className="font-medium text-green-600 transition hover:text-green-500">
-                      Demo
-                    </a>
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-green-600 transition hover:text-green-500"
+                  >
+                    Demo
                   </Link>
                 )}
                 {project.caseStudy && (
@@ -195,7 +201,7 @@ export default function Projects() {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:border-teal-500 dark:border-zinc-800 dark:bg-zinc-900/60"
+                className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-xs transition hover:border-teal-500 dark:border-zinc-800 dark:bg-zinc-900/60"
               >
                 <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">{project.title}</h3>
                 <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{project.description}</p>

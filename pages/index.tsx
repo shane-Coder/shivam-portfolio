@@ -8,7 +8,7 @@ const highlights = ['2.5+ years building backend systems', 'Event-driven microse
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-50 via-zinc-100 to-teal-50 px-4 py-24 text-zinc-900 transition-colors duration-300 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-800 dark:text-zinc-100 sm:px-6 lg:px-8">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-linear-to-br from-zinc-50 via-zinc-100 to-teal-50 px-4 py-24 text-zinc-900 transition-colors duration-300 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-800 dark:text-zinc-100 sm:px-6 lg:px-8">
       <Head>
         <title>Shivam Omer | Backend Developer & DevOps Engineer</title>
         <meta
@@ -18,7 +18,7 @@ export default function Home() {
         <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/" />
       </Head>
 
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_1px_1px,rgba(20,184,166,0.15)_1px,transparent_0)] [background-size:20px_20px] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)]" />
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_1px_1px,rgba(20,184,166,0.15)_1px,transparent_0)] bg-size-[20px_20px] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.08)_1px,transparent_0)]" />
 
       <motion.div
         initial="hidden"
@@ -45,7 +45,7 @@ export default function Home() {
             Software Engineer • Backend • DevOps
           </motion.p>
 
-          <motion.h1 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+          <motion.h1 variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-4xl font-bold leading-tight sm:text-5xl sm:leading-none lg:text-6xl">
             I cut release cycles from days to under an hour.
           </motion.h1>
 
@@ -58,7 +58,7 @@ export default function Home() {
 
           <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="flex flex-wrap justify-center gap-2 md:justify-start">
             {highlights.map((item) => (
-              <span key={item} className="rounded-full border border-zinc-300 bg-white/80 px-3 py-1 text-sm text-zinc-700 shadow-sm dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-200">
+              <span key={item} className="rounded-full border border-zinc-300 bg-white/80 px-3 py-1 text-sm text-zinc-700 shadow-xs dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-200">
                 {item}
               </span>
             ))}
@@ -75,7 +75,7 @@ export default function Home() {
           <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
             <Link
               href="/blog/cronbell"
-              className="flex items-center gap-3 rounded-2xl border border-zinc-300 bg-white/70 px-4 py-3 text-left shadow-sm transition hover:border-teal-500 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900/60"
+              className="flex items-center gap-3 rounded-2xl border border-zinc-300 bg-white/70 px-4 py-3 text-left shadow-xs transition hover:border-teal-500 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900/60"
             >
               <span className="shrink-0 rounded-full bg-teal-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-teal-700 dark:bg-teal-950 dark:text-teal-400">
                 Featured
@@ -90,10 +90,8 @@ export default function Home() {
             <a href="/ShivamOmer.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-700">
               View Resume
             </a>
-            <Link href="/contact" legacyBehavior>
-              <a className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 transition hover:border-teal-500 hover:text-teal-600 dark:border-zinc-700 dark:text-zinc-200">
-                Let’s Connect
-              </a>
+            <Link href="/contact" className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-semibold text-zinc-800 transition hover:border-teal-500 hover:text-teal-600 dark:border-zinc-700 dark:text-zinc-200">
+              Let’s Connect
             </Link>
           </motion.div>
         </div>

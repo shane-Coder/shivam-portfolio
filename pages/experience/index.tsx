@@ -84,7 +84,7 @@ export default function Experience() {
 
           <div className="space-y-8">
             {experiences.map((exp, idx) => (
-              <section key={idx} className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/60">
+              <section key={idx} className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-xs dark:border-zinc-800 dark:bg-zinc-900/60">
                 <div className="flex flex-wrap items-center gap-3">
                   {exp.logo && (
                     <Image src={exp.logo} alt={`${exp.company} logo`} width={42} height={42} className="rounded-md" />

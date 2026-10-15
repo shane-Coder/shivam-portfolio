@@ -19,7 +19,7 @@ export default function Contact() {
         <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/contact" />
       </Head>
 
-      <div className="mx-auto max-w-3xl rounded-3xl border border-zinc-200 bg-white p-8 text-center shadow-sm dark:border-zinc-800 dark:bg-zinc-900/60">
+      <div className="mx-auto max-w-3xl rounded-3xl border border-zinc-200 bg-white p-8 text-center shadow-xs dark:border-zinc-800 dark:bg-zinc-900/60">
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">Contact</p>
         <h1 className="mt-2 text-4xl font-bold sm:text-5xl">Let’s build something meaningful.</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-700 dark:text-zinc-300">
@@ -46,7 +46,7 @@ export default function Contact() {
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className="flex items-center gap-2.5 rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2.5 text-left text-sm shadow-sm transition hover:border-teal-500 dark:border-zinc-700 dark:bg-zinc-950"
+              className="flex items-center gap-2.5 rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2.5 text-left text-sm shadow-xs transition hover:border-teal-500 dark:border-zinc-700 dark:bg-zinc-950"
             >
               <Icon className="shrink-0 text-zinc-500 dark:text-zinc-400" />
               <span className="min-w-0">

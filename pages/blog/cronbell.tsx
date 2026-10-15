@@ -67,7 +67,7 @@ export default function CronbellPost() {
               The model borrows directly from dead-man’s-switch design in safety-critical systems: instead of waiting
               for a failure signal, you wait for the absence of a success signal. Every monitor in Cronbell gets a
               unique ping URL. You add one line to the end of your cron job —{' '}
-              <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">
+              <code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">
                 curl https://pulsecheck-shivam.fly.dev/ping/&lt;id&gt;
               </code>{' '}
               — and Cronbell expects that ping on a schedule you define. If the ping doesn’t arrive within the
@@ -103,7 +103,7 @@ export default function CronbellPost() {
             </p>
             <p>
               v3 replaced both with a plain function behind an internal, token-guarded endpoint (
-              <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">POST /internal/run-overdue-check</code>
+              <code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">POST /internal/run-overdue-check</code>
               ) that something external calls on a schedule. Redis stuck around, but only for request rate-limiting,
               not as a message broker. The web machine now auto-stops when idle and Postgres moved to Neon (Singapore,
               next to the Fly machine), so the whole stack can sleep between checks.
@@ -128,12 +128,12 @@ export default function CronbellPost() {
               something someone else could actually depend on. Slack, Discord, and generic webhook alerts alongside
               email, so a missed job doesn’t depend on someone checking their inbox. Opt-in public status pages, one
               per account, so a monitor’s uptime can be shared without sharing the dashboard. A per-account Prometheus{' '}
-              <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">/metrics</code> endpoint,
+              <code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">/metrics</code> endpoint,
               scoped by token, for pinning a monitor onto a Grafana board that already exists instead of asking anyone
               to visit yet another URL. Rate limiting on every state-changing endpoint and CSRF protection on every
               authenticated form — hardening that’s invisible right up until it isn’t. And a 52-test pytest suite that
               runs against an in-memory SQLite database in CI, so all of it is covered without needing Docker or a real
-              Postgres instance just to run <code className="rounded bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">pytest</code>.
+              Postgres instance just to run <code className="rounded-sm bg-zinc-100 px-1.5 py-0.5 text-base dark:bg-zinc-800">pytest</code>.
             </p>
 
             <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">A few decisions worth explaining</h2>
@@ -175,7 +175,7 @@ export default function CronbellPost() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4 border-t border-zinc-200 pt-6 text-sm dark:border-zinc-800">
+            <div className="mt-6 flex flex-wrap gap-4 border-t border-zinc-200 pt-6 text-sm dark:border-zinc-800">
               <a
                 href="https://github.com/shane-Coder/cronbell"
                 target="_blank"
