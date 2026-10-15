@@ -11,7 +11,7 @@ const pages = [
   { path: '/projects', heading: 'Selected Work' },
   { path: '/contact', heading: "Let’s build something meaningful." },
   { path: '/blog', heading: 'Writing' },
-  { path: '/blog/pulsecheck', heading: 'Building PulseCheck: a dead-man’s-switch monitor for cron jobs' },
+  { path: '/blog/cronbell', heading: 'Building Cronbell: a dead-man’s-switch monitor for cron jobs' },
   { path: '/blog/nyotanow', heading: 'NyotaNow: what broke while building invitations for Indian families' },
 ];
 
@@ -60,8 +60,20 @@ test('Contact page primary CTA points to LinkedIn', async ({ page }) => {
   await expect(cta).toHaveAttribute('href', /linkedin\.com\/in\/programmer-shivam/);
 });
 
-test('homepage Featured card links to PulseCheck (backend/DevOps flagship)', async ({ page }) => {
+test('homepage Featured card links to Cronbell (backend/DevOps flagship)', async ({ page }) => {
   await page.goto('/');
   const featured = page.getByRole('link').filter({ hasText: 'Featured' });
-  await expect(featured).toHaveAttribute('href', '/blog/pulsecheck');
+  await expect(featured).toHaveAttribute('href', '/blog/cronbell');
+});
+
+test('old PulseCheck case-study URL redirects to Cronbell', async ({ page }) => {
+  await page.goto('/blog/pulsecheck');
+  await expect(page).toHaveURL(/\/blog\/cronbell$/);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Cronbell');
+});
+
+test('experience page shows the independent role as current and Move37AI as ended', async ({ page }) => {
+  await page.goto('/experience');
+  await expect(page.locator('main')).toContainText('Sep 2026 – Present');
+  await expect(page.locator('main')).toContainText('Jan 2026 – Aug 2026');
 });

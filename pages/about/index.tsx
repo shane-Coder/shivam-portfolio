@@ -9,7 +9,7 @@ const strengths = [
   'Automating deployments with Docker, Kubernetes, Terraform, and CI/CD pipelines',
 ];
 
-const tools = ['Python', 'Django', 'FastAPI', 'Kafka', 'MongoDB', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Terraform', 'Jenkins', 'GitHub Actions'];
+const tools = ['Python', 'FastAPI', 'Django', 'TypeScript', 'Kafka', 'PostgreSQL', 'MongoDB', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Terraform', 'Prometheus', 'GitHub Actions'];
 
 export default function About() {
   return (
@@ -31,7 +31,7 @@ export default function About() {
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-teal-600 dark:text-teal-400">About Me</p>
             <h1 className="text-4xl font-bold sm:text-5xl">I build backend systems that are reliable, scalable, and production-ready.</h1>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-              I’m Shivam Omer, a Software Engineer with 2+ years of experience creating backend services, distributed workflows, and cloud infrastructure for fast-moving teams. My work sits at the intersection of software engineering, automation, and DevOps.
+              I’m Shivam Omer, a Software Engineer with 2.5+ years of experience creating backend services, distributed workflows, and cloud infrastructure for fast-moving teams. Today I build and operate two live products end to end, and my work sits at the intersection of software engineering, automation, and DevOps.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="/ShivamOmer.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-700">
@@ -69,7 +69,7 @@ export default function About() {
             <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800 md:col-span-2">
               <h2 className="text-2xl font-semibold">Current Focus</h2>
               <p className="mt-3 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                At Move37AI, I work on event-driven backend services and data-intensive workflows that support real-time operations and intelligent automation.
+                Since September 2026 I’ve been working independently, building and operating two live products end to end: Cronbell, a cron-job monitoring service, and NyotaNow, a WhatsApp-first invitation platform for Indian families.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {tools.map((tool) => (
@@ -83,14 +83,19 @@ export default function About() {
             <h2 className="text-2xl font-semibold">Experience Snapshot</h2>
             <div className="mt-4 space-y-4 text-zinc-700 dark:text-zinc-300">
               <div>
+                <p className="font-semibold text-zinc-900 dark:text-zinc-100">Independent Software Engineer — Self-Employed</p>
+                <p className="text-sm text-zinc-500">Sep 2026 – Present</p>
+                <p className="mt-2">Built and operate Cronbell (FastAPI, PostgreSQL, Fly.io) and NyotaNow (Next.js, Drizzle, Vercel) — both live, both with automated tests running in CI.</p>
+              </div>
+              <div>
                 <p className="font-semibold text-zinc-900 dark:text-zinc-100">Software Development Engineer — Move37AI</p>
-                <p className="text-sm text-zinc-500">Jan 2026 – Present</p>
+                <p className="text-sm text-zinc-500">Jan 2026 – Aug 2026</p>
                 <p className="mt-2">Built event-driven backend services using Python, Django, Kafka, and MongoDB and contributed to high-volume asynchronous workflows and real-time notifications.</p>
               </div>
               <div>
-                <p className="font-semibold text-zinc-900 dark:text-zinc-100">Backend Developer — Solytics Partners</p>
+                <p className="font-semibold text-zinc-900 dark:text-zinc-100">DevOps Consultant &amp; Backend Developer — Solytics Partners</p>
                 <p className="text-sm text-zinc-500">Mar 2024 – Dec 2025</p>
-                <p className="mt-2">Engineered WarpDrive, reduced execution latency by nearly 80%, automated CI/CD pipelines, and helped build scalable execution platforms using Django, Golang, Docker, Kubernetes, and Terraform.</p>
+                <p className="mt-2">Engineered WarpDrive (nearly 80% lower execution latency), cut manual deployment effort by over 90% with CI/CD automation, and ran Kubernetes/EKS, Terraform and observability for enterprise analytical platforms.</p>
               </div>
             </div>
           </section>
@@ -121,6 +126,27 @@ export default function About() {
                   GeeksforGeeks
                 </a>
                 <span>— solved 350+ DSA problems.</span>
+              </li>
+              <li className="list-disc pl-1 marker:text-zinc-400">
+                Writing on Medium:{' '}
+                <a
+                  href="https://medium.com/@shivamrajomar/i-got-tired-of-silent-cron-failures-so-i-built-a-dead-mans-switch-80162b047213"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-teal-600 hover:underline dark:text-teal-400"
+                >
+                  I Got Tired of Silent Cron Failures, So I Built a Dead Man’s Switch
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://medium.com/@shivamrajomar/i-built-a-whatsapp-invite-app-for-indian-families-heres-what-broke-ac5b04eec575"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-teal-600 hover:underline dark:text-teal-400"
+                >
+                  I built a WhatsApp invite app for Indian families. Here’s what broke.
+                </a>{' '}
+                Audience of 12,800+ on LinkedIn.
               </li>
               <li className="list-disc pl-1 marker:text-zinc-400">Built systems that improved execution efficiency and operational reliability across startup environments.</li>
             </ul>

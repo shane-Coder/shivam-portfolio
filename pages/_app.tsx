@@ -49,12 +49,9 @@ export default function App({ Component, pageProps }: AppProps) {
                   sameAs: [
                     'https://www.linkedin.com/in/programmer-shivam/',
                     'https://github.com/shane-Coder',
+                    'https://medium.com/@shivamrajomar',
                   ],
                   jobTitle: 'Backend Developer & DevOps Engineer',
-                  worksFor: {
-                    '@type': 'Organization',
-                    name: 'Move37AI',
-                  },
                   alumniOf: {
                     '@type': 'CollegeOrUniversity',
                     name: 'Dr. A.P.J. Abdul Kalam Technical University (AKTU)',

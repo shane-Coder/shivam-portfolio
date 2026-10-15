@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Badge from '../../components/Badge';
 
-const stack = ['Next.js 16', 'React 19', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Tailwind 4', 'Neon', 'Vercel'];
+const stack = ['Next.js 16', 'React 19', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Tailwind 4', 'Vitest', 'Sentry', 'Neon', 'Vercel'];
 
 export default function NyotaNowPost() {
   return (
@@ -34,7 +34,9 @@ export default function NyotaNowPost() {
           <h1 className="mt-2 text-4xl font-bold sm:text-5xl">
             NyotaNow: what broke while building invitations for Indian families
           </h1>
-          <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">September 2026 · 7 min read</p>
+          <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+            September 2026 · updated October 2026 · 9 min read
+          </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
             {stack.map((tech) => (
@@ -192,11 +194,59 @@ export default function NyotaNowPost() {
               product spreads on its own; if it doesn’t, no amount of posting will save it.
             </p>
 
+            <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+              Since launch: the unglamorous half
+            </h2>
+            <p>
+              Launching turned up a different kind of work. Most of the commits since are things a guest would never
+              notice — they’re what makes a product safe to put in front of strangers:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                <strong>Abuse limits.</strong> The two public write actions, creating an invite and RSVPing, are
+                rate-limited, and venue lookups are capped across the whole site rather than per caller, so no single
+                caller can hammer the map provider.
+              </li>
+              <li>
+                <strong>Errors I’d otherwise never see.</strong> Server errors go to Sentry, and unresolved ones show
+                on the private stats page. I proved the pipeline with a deliberately broken temporary route, then
+                deleted it.
+              </li>
+              <li>
+                <strong>Rules enforced on the server.</strong> The past-date check used to live in the browser; it’s now
+                enforced server-side too, along with absurd far-future years, after an invite for the year 8978 turned
+                up.
+              </li>
+              <li>
+                <strong>Honest numbers.</strong> The stats page stopped counting my own invites, views and taps as
+                strangers’, and views and footer taps are counted as events so the growth-loop funnel compares like
+                with like.
+              </li>
+              <li>
+                <strong>Privacy.</strong> There’s now a plain notice of what the site does with people’s information,
+                and guests’ details are deleted three months after the event while the card itself stays.
+              </li>
+              <li>
+                <strong>Real-user performance.</strong> Speed Insights watches the vitals real visitors get, not the
+                ones my laptop gets. Fonts were trimmed to three Poppins weights, and the Devanagari font is fetched
+                only when there’s Devanagari to draw, so English-only pages stopped paying for Hindi.
+              </li>
+              <li>
+                <strong>A test suite and CI</strong> — the item I’d listed under “what’s next” a few weeks earlier.
+              </li>
+            </ul>
+            <p>
+              On the product side, Navratri and Durga Puja got an occasion of their own, there are now seven card
+              designs, hosts get venue suggestions they can pin to the card, and the app lives at its own domain,
+              nyotanow.in.
+            </p>
+
             <h2 className="pt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">What’s next</h2>
             <p>
-              Rate limiting, a test suite and CI, error monitoring, and eventually a small paid tier to remove the
-              branding. But first: real invites, from real hosts, to real guests. Everything else is guesswork until
-              then.
+              What’s left is the part that needs real users: a small paid tier to remove the branding (a design note in
+              the repo writes down what has to be true before charging anyone), a wedding mode with several events on
+              one page, WhatsApp reminders the day before, and more languages. But first: real invites, from real
+              hosts, to real guests. Everything else is guesswork until then.
             </p>
 
             <p>

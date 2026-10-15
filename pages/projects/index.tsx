@@ -5,33 +5,33 @@ import Badge from '../../components/Badge';
 
 const featuredProjects = [
   {
-    title: 'PulseCheck — Cron Job & Scheduled Task Monitoring',
+    title: 'Cronbell (formerly PulseCheck) — Cron Job & Scheduled Task Monitoring',
     description:
-      "A dead-man's-switch monitoring service for cron jobs and scheduled tasks: each job pings a unique URL when it finishes, and PulseCheck emails, Slacks, or webhooks you the moment a ping goes missing. Started as a single-service demo; has since grown into a hardened, self-service product with its own CI and a 41-test suite.",
-    tech: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Redis', 'GitHub Actions', 'Docker', 'Fly.io'],
-    github: 'https://github.com/shane-Coder/PulseCheck',
+      "A dead-man's-switch monitoring service for cron jobs and scheduled tasks: each job pings a unique URL when it finishes, and Cronbell emails, Slacks, or webhooks you when a ping goes missing. Live as a free demo on Fly.io with Postgres on Neon, backed by a 52-test suite in CI.",
+    tech: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Redis', 'Neon', 'GitHub Actions', 'Docker', 'Fly.io'],
+    github: 'https://github.com/shane-Coder/cronbell',
     live: 'https://pulsecheck-shivam.fly.dev/',
-    caseStudy: '/blog/pulsecheck',
+    caseStudy: '/blog/cronbell',
     highlights: [
-      'Replaced an always-on Celery worker with a GitHub Actions cron hitting an internal, token-guarded endpoint — cut the single biggest line item off the Fly.io bill without losing the check cadence',
-      'Slack, Discord, and generic webhook alerts alongside email, plus opt-in public status pages and a per-account Prometheus /metrics endpoint for pinning onto an existing Grafana dashboard',
-      'Rate limiting on every state-changing endpoint, CSRF protection on every authenticated form, and self-service account flows (password reset, email verification, admin panel)',
-      '41-test pytest suite running against in-memory SQLite in its own CI, independent of Docker or a real Postgres instance',
+      'Dropped the always-on Celery worker for a token-guarded internal endpoint on a 15-minute external trigger — and found GitHub’s scheduler too unreliable to be the only one, so cron-job.org is primary and GitHub Actions the backup',
+      'Web machine auto-stops when idle and Postgres sits on Neon, so both can sleep between checks; the 15-minute cadence is chosen for exactly that',
+      'Slack, Discord, and webhook alerts, opt-in public status pages, and a per-account Prometheus /metrics endpoint for existing Grafana boards',
+      'Rate limiting and CSRF protection on every state-changing endpoint, with a 52-test PyTest suite running in CI',
     ],
   },
   {
     title: 'NyotaNow — Invitations as a link, with RSVPs',
     description:
-      'A consumer product for Indian families: instead of forwarding an invitation JPG on WhatsApp, the host shares one link with a live countdown, Maps directions, and one-tap RSVP. Hindi and English are both first-class, with real Devanagari typography. Live in production on Vercel, Postgres in Singapore.',
-    tech: ['Next.js 16', 'React 19', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Tailwind 4', 'Vercel', 'Neon'],
+      'A consumer product for Indian families: instead of forwarding an invitation JPG on WhatsApp, the host shares one link with a live countdown, Maps directions, and one-tap RSVP. Seven occasions (Navratri included) and seven card designs, with Hindi and English both first-class and real Devanagari typography. Live at nyotanow.in on Vercel, Postgres in Singapore.',
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Vitest', 'Sentry', 'Vercel', 'Neon'],
     github: 'https://github.com/shane-Coder/nyotanow',
     live: 'https://nyotanow.in/?utm_source=portfolio',
     caseStudy: '/blog/nyotanow',
     highlights: [
       'One card component renders the live preview, the invite page, and a 1080×1350 PNG export, sized entirely in container-query units so all three stay identical',
       'No accounts: each invite is guarded by a random key stored only as a SHA-256 hash, compared in constant time, with identical 404s for wrong and missing keys',
-      'Schema migrations run behind a Postgres advisory lock so concurrent serverless cold starts cannot race each other',
-      'Server and database co-located in Singapore; a warm invite page responds in ~0.3s from India',
+      'Hardened after launch: rate-limited public write actions, Sentry errors surfaced on a private stats page, real-user Speed Insights, and a Vitest suite gated by CI',
+      'Dates and limits enforced server-side rather than trusted to the browser; guest data is deleted three months after the event while the card stays',
     ],
   },
   {
@@ -120,7 +120,7 @@ export default function Projects() {
         <title>Projects | Shivam Omer</title>
         <meta
           name="description"
-          content="Selected backend and DevOps projects by Shivam Omer — PulseCheck cron job monitoring, an Azure Databricks Delta Lake pipeline, Kafka-driven microservices, and more."
+          content="Selected backend and DevOps projects by Shivam Omer — Cronbell cron job monitoring, the NyotaNow invitation platform, an Azure Databricks Delta Lake pipeline, Kafka-driven microservices, and more."
         />
         <link rel="canonical" href="https://shivam-portfolio-gold-omega.vercel.app/projects" />
       </Head>

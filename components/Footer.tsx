@@ -35,12 +35,12 @@ export default function Footer() {
         </div>
 
         <a
-          href="https://github.com/shane-Coder/PulseCheck"
+          href="https://github.com/shane-Coder/cronbell"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 transition hover:border-teal-500 hover:text-teal-600 dark:border-zinc-700 dark:text-zinc-300 dark:hover:text-teal-400"
         >
-          Built with PulseCheck — my cron monitoring project ↗
+          Cronbell — my cron-job monitoring project ↗
         </a>
       </div>
     </footer>

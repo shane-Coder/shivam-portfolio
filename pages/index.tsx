@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const stack = ['Python', 'Django', 'FastAPI', 'Kafka', 'Docker', 'Kubernetes', 'AWS', 'Azure'];
-const highlights = ['2+ years building backend systems', 'Event-driven microservices', 'Cloud-native automation'];
+const highlights = ['2.5+ years building backend systems', 'Event-driven microservices', 'Two live products, built and run end to end'];
 
 export default function Home() {
   return (
@@ -50,9 +50,10 @@ export default function Home() {
           </motion.h1>
 
           <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-            I’m Shivam Omer, a backend engineer who builds event-driven services and automates the deployment
-            pipelines around them. 2+ years shipping production systems in Python, Django, Kafka, Docker,
-            Kubernetes, and AWS/Azure — currently open to full-time backend &amp; DevOps roles.
+            I’m Shivam Omer, a backend engineer who builds event-driven services and the deployment automation
+            around them. 2.5+ years in Python, FastAPI, Django, Kafka, Docker, Kubernetes, and AWS/Azure — and
+            right now I build and run two live products end to end. Currently open to full-time backend &amp;
+            DevOps roles.
           </motion.p>
 
           <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="flex flex-wrap justify-center gap-2 md:justify-start">
@@ -73,14 +74,14 @@ export default function Home() {
 
           <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
             <Link
-              href="/blog/pulsecheck"
+              href="/blog/cronbell"
               className="flex items-center gap-3 rounded-2xl border border-zinc-300 bg-white/70 px-4 py-3 text-left shadow-sm transition hover:border-teal-500 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-900/60"
             >
               <span className="shrink-0 rounded-full bg-teal-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-teal-700 dark:bg-teal-950 dark:text-teal-400">
                 Featured
               </span>
               <span className="text-sm text-zinc-700 dark:text-zinc-300">
-                <strong className="text-zinc-900 dark:text-zinc-100">PulseCheck</strong> — dead-man's-switch monitoring with Slack/webhook alerts and status pages. Read the case study →
+                <strong className="text-zinc-900 dark:text-zinc-100">Cronbell</strong> — dead-man’s-switch monitoring for cron jobs, live as a free demo. Read the case study →
               </span>
             </Link>
           </motion.div>
